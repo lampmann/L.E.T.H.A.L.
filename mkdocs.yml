@@ -50,6 +50,15 @@ theme:
 extra_css:
   - stylesheets/wiki.css
 
+extra_javascript:
+  - javascripts/mathjax.js
+  # MathJax 3.2.2, vendored rather than loaded from a CDN: the wiki then has no
+  # third-party runtime dependency, renders offline, and cannot be broken by
+  # someone else's outage or compromise (cf. polyfill.io, 2024). The SVG build
+  # is used because it embeds its fonts — the CommonHTML build would need a
+  # further ~2 MB of woff files alongside it.
+  - javascripts/mathjax/tex-mml-svg.js
+
 plugins:
   - search
 
@@ -65,6 +74,8 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.caret
@@ -88,10 +99,17 @@ extra:
 nav:
   - Home: index.md
   - Rules:
-      - Core Rules: rules/index.md
+      - Core Resolution: rules/index.md
+      - Ability Scores: rules/ability-scores.md
+      - Combat: rules/combat.md
       - Character Creation: rules/character-creation.md
+  - Magic:
+      - Aspects: magic/aspects.md
+      - Spell Notation: magic/notation.md
   - Game Master:
       - Running the Game: gm/index.md
+  - Design:
+      - Open Questions: design/open-questions.md
   - Reference:
       - Glossary: glossary.md
       - Editing This Wiki: contributing.md

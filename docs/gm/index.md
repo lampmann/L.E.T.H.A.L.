@@ -26,8 +26,26 @@ which yours asks for is more useful than generic advice.
 
 ## Setting difficulties
 
-*TBD.* Practical guidance for picking a target number on the fly, pointing back
-at the [difficulty table](../rules/index.md#difficulty).
+The referee supplies two numbers per situation: the difficulty \(D\), in the
+same logarithmic units as the character's score, and the
+[skill factor \(b\)](../rules/index.md#the-skill-factor).
+
+\(D\) is the easier of the two, because it is a claim about the world rather
+than about the fiction: how much force does the door need, how fast is the
+opponent. Setting it means estimating a real quantity and taking its logarithm,
+which is a habit rather than a skill.
+
+\(b\) is the one that decides how the scene feels, since it controls both
+swinginess and crit frequency. Until
+[its assignment rule is settled](../design/open-questions.md#how-is-b-assigned),
+judge it by how completely the rules capture the situation — a known weight on
+a firm floor is high \(b\), a crumbling ledge in the dark is low.
+
+<div class="stub" markdown>
+Needs a worked difficulty ladder: half a dozen anchored examples per score, so
+a referee can interpolate rather than derive. Blocked on
+[what anchors the baseline](../design/open-questions.md#what-anchors-the-baseline).
+</div>
 
 ## Adjudication
 

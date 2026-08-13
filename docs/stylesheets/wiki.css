@@ -41,11 +41,19 @@
 
 /* ------------------------------------------------------------- typography -- */
 
+/*
+ * The symbol fonts at the end of the stack are fallbacks only — they are
+ * reached for characters the sans fonts lack, which here means the alchemical
+ * signs (U+1F700 block) used for the aspects. Coverage for that block is poor
+ * in default system fonts, so naming candidates explicitly is what keeps 🜔
+ * from rendering as a tofu box.
+ */
 body,
 input,
 .md-typeset {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+    "Helvetica Neue", Arial, sans-serif, "Noto Sans Symbols 2",
+    "Segoe UI Symbol", "Apple Symbols", Symbola;
 }
 
 .md-typeset {
@@ -179,6 +187,35 @@ input,
 .md-typeset table:not([class]) th,
 .md-typeset table:not([class]) td {
   padding: 0.4em 0.6em;
+}
+
+/*
+ * Material's JavaScript wraps every table at runtime in
+ * .md-typeset__scrollwrap > .md-typeset__table. The scrollwrap is the element
+ * that sits in normal flow, so it is the one that has to clear the infobox —
+ * a rule on the inner .md-typeset__table does nothing.
+ *
+ * Without this, the scrollwrap's overflow-x makes it a block formatting
+ * context, which narrows it into the strip beside a 22em infobox and then
+ * clips the columns that no longer fit. Tables here are wide and
+ * column-heavy, so clearing costs a little whitespace under a tall infobox
+ * and buys full width for every table.
+ */
+.md-typeset__scrollwrap {
+  clear: right;
+}
+
+/* Except the infobox's own table, which lives inside the float. */
+.md-typeset .infobox .md-typeset__scrollwrap {
+  clear: none;
+  margin: 0;
+}
+
+/* Alchemical signs run small in most fonts; the aspect table is where they
+   need to be legible. */
+.md-typeset .sign {
+  font-size: 1.3em;
+  line-height: 1;
 }
 
 /*

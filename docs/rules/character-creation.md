@@ -1,13 +1,15 @@
 # Character Creation
 
-<p class="hatnote">For the resolution mechanic these numbers feed into, see <a href="../">Core Rules</a>.</p>
+<p class="hatnote">For the scores a character is built from, see <a href="../ability-scores/">Ability Scores</a>.</p>
 
 How a player makes someone to play in L.E.T.H.A.L.
 
 <div class="stub" markdown>
-Placeholder. Once the [core roll](index.md) is settled, the numbers on a
-character sheet have something to plug into and this page can be written
-properly.
+Blocked, not merely unwritten. The [scores](ability-scores.md) exist and the
+[curve](index.md) is settled, but creation cannot be specified until
+[how \(b\) is assigned](../design/open-questions.md#how-is-b-assigned) and
+[what anchors the baseline](../design/open-questions.md#what-anchors-the-baseline)
+are decided. Both change what a starting number means.
 </div>
 
 ## At a glance
@@ -41,14 +43,9 @@ when they are done — a name, a set of numbers, a reason to be there.
 
 ## Attributes
 
-*TBD.* List them here with one line each on what the attribute governs. Keep the
-count small enough that a player can hold all of them in their head.
-
-| Attribute | Governs |
-|---|---|
-| *TBD* | *TBD* |
-| *TBD* | *TBD* |
-| *TBD* | *TBD* |
+Settled: the nineteen [ability scores](ability-scores.md), grouped as Output,
+Integrity, Control, Signal and Mind, plus the chassis parameters. What remains
+is how a player *sets* them at creation.
 
 ## Assigning numbers
 
