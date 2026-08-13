@@ -5,15 +5,14 @@
 How a player makes someone to play in L.E.T.H.A.L.
 
 <div class="stub" markdown>
-Partly unblocked. The [scores](ability-scores.md) exist, the [curve](index.md)
-is settled, and a starting number now means something concrete —
-[score 0 is a median present-day adult](ability-scores.md#anchoring), so a
-starting character sits within about ±1.5 of that on most scores.
+This page is not complete. The [scores](ability-scores.md) exist and the
+[formula](index.md) is complete. A starting number now has a meaning:
+[score 1.00 is a median adult](ability-scores.md#anchor-values), so most
+starting scores are between 0.35 and 2.8.
 
-One thing still gates a full write-up:
-[what a level actually grants](../design/open-questions.md#what-does-a-level-actually-grant).
-Whether a level is one point or a budget decides what a player is handed to
-spend.
+One question remains:
+[what does a level give?](../notes/open-questions.md#what-does-a-level-actually-grant)
+The answer decides what a player receives to spend.
 </div>
 
 ## At a glance

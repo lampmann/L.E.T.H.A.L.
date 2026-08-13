@@ -5,35 +5,37 @@ Terms of art used across the wiki.
 ## A–Z
 
 Aspect
-:   One of the seven types a spell acts on: Body, Soul, Spirit, Earth, Water,
-    Air, Fire. See [Aspects](magic/aspects.md).
+:   One of the five kinds of magic: Hylogenesis, Anabiosis, Pyrolysis,
+    Autophoresis and Anamnesis. See [Aspects](magic/aspects.md).
 
 b
-:   The **skill factor**. Controls how much scores matter relative to luck. At
-    \(b = 0\) every check is a coin flip; as \(b\) rises the dice matter less.
-    See [Core Resolution](rules/index.md#the-skill-factor).
+:   The **skill factor**. It controls how much the scores are important against
+    luck. At \(b = 0\) each check is a coin toss. A high \(b\) removes luck.
+    \(b\) is the reciprocal of the noise in the situation. See
+    [Core Resolution](rules/index.md#where-b-comes-from).
 
 Chassis
-:   The raw physical parameters of a body — mass, length, density, metabolic
-    rate, limb count, lifespan, sensory offsets. Recorded in real units, not as
-    scores. See [Ability Scores](rules/ability-scores.md#chassis).
+:   The physical measurements of a body: mass, length, density, energy use,
+    number of limbs, lifespan, and a factor for each sense. These are in real
+    units. They are not scores. See
+    [Ability Scores](rules/ability-scores.md#chassis).
 
 CF / NF / NS / CS
 :   Critical Failure, Normal Failure, Normal Success, Critical Success. The
-    four outcome tiers. See [Core Resolution](rules/index.md#the-four-tiers).
+    four outcome tiers. See [Core Resolution](rules/index.md#the-four-results).
 
 Daemon
 :   A bound spirit that can listen, speak, read, write and cast independently.
     Formally, a closed ring that rewrites its own strokes. See
     [Spell Notation](magic/notation.md#daemons).
 
-Delta (Δ)
-:   Score minus difficulty, in doublings. The single input to the resolution
-    curve. See [Core Resolution](rules/index.md#what-delta-means).
+Difficulty (D)
+:   The demand of a task, on the same scale as a score. A median adult is 1.00.
+    See [Core Resolution](rules/index.md#the-formula).
 
-Edge (E)
-:   \(b\Delta\). Computed once per situation, then compared against the roll's
-    swing. See [Core Resolution](rules/index.md#rolling-it-at-the-table).
+Ratio (R)
+:   Score divided by difficulty. The only input to the resolution formula. See
+    [Core Resolution](rules/index.md#the-formula).
 
 Ending
 :   Bodily death — the stage a sword can force. Distinct from Reaping.
@@ -47,9 +49,8 @@ Hitstun
     tempo advantage. See [Combat](rules/combat.md#hitstun).
 
 Level
-:   Advancement track. One level is one point of score, and therefore one
-    doubling of real capability. Unbounded. See
-    [Level and scaling](rules/ability-scores.md#level-and-scaling).
+:   The advancement track. Each level multiplies the scores. There is no
+    maximum. See [Level](rules/ability-scores.md#level).
 
 Lich
 :   Undead that walks free rather than being controlled, sustained by a
@@ -73,9 +74,9 @@ Reaping
 :   Dissolution of the soul, performed by that soul's guardian. In notation,
     `∄ 🜍` — and it is gated by ownership, not by type.
 
-Swing (L)
-:   The roll's contribution, read off the d100 table in base-2 log-odds. Low is
-    good. See [Core Resolution](rules/index.md#the-swing-table).
+Score (S)
+:   A measured quantity, divided by the quantity for a median adult. See
+    [Ability Scores](rules/ability-scores.md).
 
 Tefillah
 :   The object a lich names as its sole guardian. Plural *tefillin*.

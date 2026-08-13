@@ -10,18 +10,18 @@ until they resolve. For questions already answered, see [Decisions](decisions.md
 
 ### What does a level actually grant?
 
-Settled that [scores are linear in level](decisions.md#scores-are-linear-in-level-power-is-exponential).
-Still open is whether a level grants one point to one score, or a budget spread
-across several.
+Settled that [each level multiplies the scores](../rules/ability-scores.md#level).
+Still open is whether a level doubles one score, or gives a quantity of
+increase to divide between several.
 
-One point per level keeps the level gap and \(\Delta\) numerically identical,
-which makes every level-difference table exact. A budget breaks that identity
-but lets two characters of equal level be genuinely different, which is most of
-what character building is for.
+One score per level keeps the level difference and the ratio \(R\) identical,
+which makes every level-difference table exact. A budget breaks that identity,
+but it lets two characters of the same level be genuinely different, which is
+most of what character building is for.
 
 ### Anchoring the remaining fifteen scores
 
-Settled that [anchors come from contemporary human data](decisions.md#score-0-is-anchored-to-contemporary-human-data),
+Settled that [anchors come from contemporary human data](decisions.md#score-100-is-anchored-to-contemporary-human-data),
 and Force, Power, Stamina and Latency are done. The other fifteen each need a
 named measurement, a median, and a citation — and for Will, Composure,
 Projection and the rest, an honest note about what the proxy does not capture.
@@ -29,19 +29,17 @@ Projection and the rest, an honest note about what the proxy does not capture.
 The largest remaining piece of unglamorous work in the system. Every difficulty
 table waits on it.
 
-### Aspects in linear or log space?
+### Are aspect defences multipliers or exponents?
 
-Mixed-aspect effect is the dot product of the spell's aspect share with the
-target's defence vector. If defences are multipliers, that dot product is a
-linear-space operation sitting inside an otherwise logarithmic system, and it
-disagrees with the log-space reading for any spell that is not purely one
-aspect. Deciding this fixes whether
-[aspect advantage](../magic/aspects.md#advantage-is-one-doubling) is ±1 to
-\(\Delta\) or a separate multiplier.
+Mixed-aspect effect adds the spell's aspect values against the target's defence
+values. If the defences are multipliers, a half-fire spell against a
+fire-resistant target gets half the resistance. If they are exponents, it gets
+the square root. The two disagree for every spell that uses more than one
+aspect. Single-aspect spells are the same either way.
 
 ## Character
 
-### Which score list is canonical?
+### Which score list is correct?
 
 **Load-bearing.** The [skill list](../rules/skills.md#the-skill-list) pairs
 eight scores; [Ability Scores](../rules/ability-scores.md) defines nineteen.
@@ -50,7 +48,7 @@ fifteen skill names and re-parent them onto the nineteen — but that has to be
 done deliberately, because several of the nineteen absorb a pair outright.
 
 Note also the name collision: **Composure** is currently both a skill and an
-ability score, and the [b rule](../rules/index.md#the-character-term) refers to
+ability score, and the [b rule](../rules/index.md#the-character-part) refers to
 the score. One of the two needs renaming.
 
 ### What is the skill list?
@@ -104,15 +102,22 @@ diagonal distance works for reach weapons.
 ### Do aspects and verbs occupy the same axis?
 
 **Load-bearing.** Each aspect now carries a
-[basic database operation](../magic/aspects.md#the-five) — Hylogenesis *is*
+[basic database operation](../magic/aspects.md#the-five-aspects) — Hylogenesis *is*
 Create, Pyrolysis *is* Delete. But [Spell Notation](../magic/notation.md#verbs)
 treats the five verbs as operators applying freely to any aspect, giving
 thirty-five primitives. Both cannot be true as written.
 
-Three readings, in [The consequence nobody has priced in yet](../magic/aspects.md#the-consequence-nobody-has-priced-in-yet):
-aspects absorb the verbs; verbs stay orthogonal and the operation is only
-flavour; or the two sit at different layers with the compiler mapping between
-them. Until this resolves, neither magic page is stable.
+Three readings:
+
+1. **Aspects absorb the verbs.** The notation loses its verb column. A spell
+   becomes a point in aspect space plus arguments. This is the cleanest, and it
+   explains why five is natural: five elements, five operations.
+2. **Verbs stay separate.** An aspect's operation is only the one it performs
+   most naturally — flavour, not a type rule. The 35 primitives survive.
+3. **Both, at different layers.** Aspects are what magic is made of. Verbs are
+   what a caster writes. The compiler maps between them.
+
+Until this resolves, neither magic page is stable.
 
 ### Five aspects or seven?
 

@@ -109,9 +109,11 @@ nav:
       - Spell Notation: magic/notation.md
   - Game Master:
       - Running the Game: gm/index.md
-  - Design:
-      - Decisions: design/decisions.md
-      - Open Questions: design/open-questions.md
+  - Design Notes:
+      - About These Notes: notes/index.md
+      - Decisions: notes/decisions.md
+      - Open Questions: notes/open-questions.md
+      - Scratchpad: notes/scratchpad.md
   - Reference:
       - Glossary: glossary.md
       - Editing This Wiki: contributing.md

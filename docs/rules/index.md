@@ -1,290 +1,182 @@
 # Core Resolution
 
-<p class="hatnote">For the scores that feed into a check, see <a href="ability-scores/">Ability Scores</a>. For unsettled questions arising from this page, see <a href="../design/open-questions/">Open Questions</a>.</p>
+<p class="hatnote">For the scores that go into a check, see <a href="ability-scores/">Ability Scores</a>.</p>
 
-Every contested action in L.E.T.H.A.L. resolves through one curve. This page
-defines it, the four outcome tiers, and the procedure for rolling it at a table.
+This page gives the rule for all contested actions.
 
-## The curve
+## The formula
 
-The chance of success is
+The probability of success is:
 
-\[ p = \frac{1}{1 + \left(\dfrac{\text{target number}}{\text{modifiers}}\right)^{b}} \]
+\[ p = \frac{S^{b}}{S^{b} + D^{b}} \]
 
-Because [ability scores](ability-scores.md) are already base-2 logarithms, this
-simplifies enormously. Write \(S\) for the character's relevant score and \(D\)
-for the difficulty in the same units. Then modifiers \(= 2^{S}\), target number
-\(= 2^{D}\), the ratio becomes a difference, and
+- \(S\) is the character's score.
+- \(D\) is the difficulty, in the same units as \(S\).
+- \(b\) is the skill factor.
 
-\[ p = \frac{1}{1 + 2^{-b\Delta}}, \qquad \Delta = S - D \]
+Scores are quantities, not logarithms. A score of 2.0 is twice a score of 1.0.
+A median adult human has a score of 1.0 in each ability.
 
-This is the logistic curve. **Nobody at the table multiplies or divides
-anything** — you subtract difficulty from score and read one number off a table.
+Only the **ratio** \(R = S / D\) is important. If the character is three times
+better than the task needs, \(R = 3\), and the result is the same at
+\(S = 3, D = 1\) as at \(S = 300, D = 100\).
 
-Opposed checks need no separate rule: set \(D\) to the opponent's score, and
-\(\Delta\) is simply the gap between the two characters.
-
-### What Δ means { #what-delta-means }
-
-One point of \(\Delta\) is one doubling of the underlying physical quantity.
-\(\Delta = +3\) means the character brings eight times what the task demands.
-This is what makes the system scale without ceiling — a dragon and a dockworker
-sit on the same axis, thousands of doublings apart, and the same table resolves
-both.
+An opposed check needs no other rule. Make \(D\) the opponent's score.
 
 ## The skill factor
 
-\(b\) controls how much the dice matter relative to the scores.
+\(b\) sets how much the scores are important, against how much luck is
+important.
 
-| \(b\) | Character of the roll |
+| \(b\) | Effect |
 |---|---|
-| 0 | Scores are irrelevant. Every check is a coin flip. |
-| 0.5 | Wildly swingy. Eight times overqualified still fails 20% of the time. |
-| 1 | Noticeable luck, scores matter. |
-| 2 | Competence usually tells. |
-| 4 | Near-deterministic within a few doublings. |
-| ∞ | Luck is irrelevant. Pass or fail is decided before the roll. |
+| 0 | The scores do nothing. Each check is a coin toss. |
+| 0.5 | Very unstable. |
+| 1 | Luck is important, but the scores are also important. |
+| 2 | Ability usually wins. |
+| 4 | Almost no luck, unless the scores are close. |
+| high | Luck does nothing. The result is known before the roll. |
 
-Success probability by \(\Delta\) and \(b\):
+Probability of success:
 
-| \(\Delta\) | b = 0.5 | b = 1 | b = 2 | b = 4 |
+| \(R = S/D\) | b = 0.5 | b = 1 | b = 2 | b = 4 |
 |---|---|---|---|---|
-| **0** | 50% | 50% | 50% | 50% |
-| **+1** | 58.6% | 66.7% | 80.0% | 94.1% |
-| **+2** | 66.7% | 80.0% | 94.1% | 99.6% |
-| **+4** | 80.0% | 94.1% | 99.6% | 99.998% |
+| 1 | 50% | 50% | 50% | 50% |
+| 1.5 | 55% | 60% | 69% | 84% |
+| 2 | 59% | 67% | 80% | 94% |
+| 3 | 63% | 75% | 90% | 99% |
+| 4 | 67% | 80% | 94% | 99.6% |
+| 8 | 74% | 89% | 98% | 99.98% |
 
-Negative \(\Delta\) mirrors exactly: \(p(-\Delta) = 1 - p(\Delta)\).
+At \(b = 1\) the formula becomes \(p = S / (S + D)\). This is easy to do in
+your head, and it is the recommended value if you do not want to calculate.
 
-!!! warning "Low b throws your ability scores away"
-    This is the deciding consequence of the parameter. At \(b = 0.5\), a
-    character eight times stronger than a task still fails one attempt in five.
-    At \(b = 0.25\), a character a *thousand* times stronger fails 16% of the
-    time. If you build infinitely scaling scores and then resolve them at low
-    \(b\), the scores stop paying out. \(b\) is the throttle that decides
-    whether the rest of the system means anything.
+## The four results
 
-## The four tiers
+There are four results: Critical Failure, Normal Failure, Normal Success and
+Critical Success. Use the short forms **CF**, **NF**, **NS** and **CS**.
 
-Outcomes are Critical Failure, Normal Failure, Normal Success and Critical
-Success — **CF**, **NF**, **NS**, **CS**.
+A result is critical if it does not change when the score changes by a factor
+of three:
 
-The margin rule: a result is critical if it would still have gone that way
-with modifiers three times worse (for a success) or three times better (for a
-failure). A factor of three is a fixed offset on the \(\Delta\) axis:
+- You get a **CS** if you would also succeed with one third of your score.
+- You get a **CF** if you would also fail with three times your score.
 
-\[ \log_2 3 \approx 1.585 \]
+### Procedure
 
-So the four tiers are a constant-width window sliding along the axis. Roll a
-uniform \(r \in [0,1)\) and read down the list, first match winning:
+1. Calculate \(R = S / D\).
+2. Calculate the three percentages: \(p(R/3)\), \(p(R)\) and \(p(3R)\).
+3. Roll d100.
+4. Read the result from the table.
 
-| Outcome | Condition |
+| Result | Condition |
 |---|---|
-| **CS** | \(r < p(\Delta - 1.585)\) |
-| **NS** | \(r < p(\Delta)\) |
-| **NF** | \(r < p(\Delta + 1.585)\) |
-| **CF** | otherwise |
+| **CS** | The roll is less than or equal to \(p(R/3)\). |
+| **NS** | The roll is less than or equal to \(p(R)\). |
+| **NF** | The roll is less than or equal to \(p(3R)\). |
+| **CF** | The roll is more than \(p(3R)\). |
 
-!!! danger "Correction to the brainstorm notes"
-    The notes list this cascade with the crit offsets swapped — CS tested
-    against \(p(\Delta + 1.585)\) and NF against \(p(\Delta - 1.585)\). Because
-    \(p\) increases with \(\Delta\), that ordering tests the *largest*
-    threshold first and assigns **75% of all rolls at even odds to Critical
-    Success**. The prose rule is right and the cascade transcribes it
-    backwards: succeeding *despite* a 3× handicap means testing against
-    \(\Delta - 1.585\), the harder curve. The table above is corrected.
+Read the table from the top. The first condition that agrees gives the result.
 
-### Crit rates
+### Example
 
-At even odds the tiers give a clean identity:
+A character has \(S = 2.5\). The task has \(D = 1.0\). The skill factor is
+\(b = 2\).
+
+1. \(R = 2.5\)
+2. \(p(R/3) = 41\%\), \(p(R) = 86\%\), \(p(3R) = 98\%\)
+3. The roll is 62.
+4. 62 is more than 41, but less than 86. The result is a **Normal Success**.
+
+A roll of 41 or less gives a Critical Success. A roll of 99 or 100 gives a
+Critical Failure.
+
+### Critical rate
+
+When the two sides are equal, the two critical results have the same
+probability:
 
 \[ P(\text{CS}) = P(\text{CF}) = \frac{1}{1 + 3^{b}} \]
 
-| \(b\) | Crit rate each way at 50/50 |
+| \(b\) | Critical rate, each side |
 |---|---|
-| 0.5 | 36.6% |
+| 0.5 | 37% |
 | 1 | 25% |
 | 2 | 10% |
 | 3 | 3.6% |
 | 4 | 1.2% |
 | 6 | 0.14% |
 
-This is the second reason \(b\) is the most consequential number in the system:
-it sets swinginess and crit frequency together, from one dial.
-
-## Rolling it at the table
-
-The curve is continuous, so it needs a procedure. This one costs a single
-lookup and one comparison.
-
-Roll d100 and read its **swing** \(L\) from the table below. Then compute two
-numbers from the check itself:
-
-- **Edge** \(E = b\Delta\)
-- **Crit window** \(W = 1.585b\)
-
-Compare:
-
-| Outcome | Condition |
-|---|---|
-| **CS** | \(L < E - W\) |
-| **NS** | \(L < E\) |
-| **NF** | \(L < E + W\) |
-| **CF** | \(L \ge E + W\) |
-
-\(b\) is a property of the task, not the roll, so \(E\) and \(W\) are computed
-once per situation and reused for every check against it.
-
-??? note "Why this works"
-    Success requires \(r < p(\Delta) = 1/(1 + 2^{-b\Delta})\). Rearranging,
-    that condition is exactly \(\log_2\!\big(r/(1-r)\big) < b\Delta\). The
-    left side depends only on the die, so it can be tabulated once and
-    reused for every value of \(b\) and \(\Delta\) forever. \(L\) is the
-    roll's log-odds in base 2 — the same units as everything else in the
-    system.
-
-### The swing table
-
-Read the tens down the left, the units across the top. \(L\) is negative on low
-rolls, so **low is good**.
-
-| d100 | +1 | +2 | +3 | +4 | +5 | +6 | +7 | +8 | +9 | +10 |
-|---|---|---|---|---|---|---|---|---|---|---|
-| **0** | -7.64 | -6.04 | -5.29 | -4.79 | -4.41 | -4.10 | -3.85 | -3.62 | -3.43 | -3.25 |
-| **10** | -3.09 | -2.94 | -2.81 | -2.68 | -2.56 | -2.45 | -2.34 | -2.24 | -2.14 | -2.05 |
-| **20** | -1.96 | -1.87 | -1.78 | -1.70 | -1.62 | -1.55 | -1.47 | -1.40 | -1.33 | -1.26 |
-| **30** | -1.19 | -1.13 | -1.06 | -1.00 | -0.93 | -0.87 | -0.80 | -0.74 | -0.68 | -0.61 |
-| **40** | -0.55 | -0.49 | -0.43 | -0.37 | -0.31 | -0.25 | -0.20 | -0.14 | -0.08 | -0.03 |
-| **50** | +0.03 | +0.08 | +0.14 | +0.20 | +0.25 | +0.31 | +0.37 | +0.43 | +0.49 | +0.55 |
-| **60** | +0.61 | +0.68 | +0.74 | +0.80 | +0.87 | +0.93 | +1.00 | +1.06 | +1.13 | +1.19 |
-| **70** | +1.26 | +1.33 | +1.40 | +1.47 | +1.55 | +1.62 | +1.70 | +1.78 | +1.87 | +1.96 |
-| **80** | +2.05 | +2.14 | +2.24 | +2.34 | +2.45 | +2.56 | +2.68 | +2.81 | +2.94 | +3.09 |
-| **90** | +3.25 | +3.43 | +3.62 | +3.85 | +4.10 | +4.41 | +4.79 | +5.29 | +6.04 | +7.64 |
-
-### Worked example
-
-A character with Force 2.5 shoves a door whose difficulty is 1.0, at \(b = 2\).
-
-- \(\Delta = 2.5 - 1.0 = 1.5\)
-- \(E = 2 \times 1.5 = 3.0\), \(W = 1.585 \times 2 = 3.17\)
-- Bands: CS below \(-0.17\), NS below \(3.0\), NF below \(6.17\), else CF.
-- Roll 62 → \(L = +0.74\). That is under 3.0 but not under \(-0.17\): **Normal
-  Success**.
-
-Rolling 48 or less would have been a Critical Success; 99 or 100 a Critical
-Failure.
-
-## The die caps your range
-
-d100 has finite resolution. The largest swing it can express is \(\pm 7.64\),
-so once \(|E|\) exceeds that, the roll cannot change the outcome:
-
-| \(b\) | Auto-resolves beyond |
-|---|---|
-| 0.5 | \(\|\Delta\| > 15.3\) |
-| 1 | \(\|\Delta\| > 7.6\) |
-| 2 | \(\|\Delta\| > 3.8\) |
-| 4 | \(\|\Delta\| > 1.9\) |
-| 6 | \(\|\Delta\| > 1.3\) |
-
-This is a feature, not a defect — it is the system telling you when to stop
-rolling. But note the interaction: **high \(b\) shrinks the band of \(\Delta\)
-worth rolling for.** At \(b = 4\), any gap beyond two doublings is settled, and
-you should narrate rather than roll. If you want dice to stay meaningful across
-wide gaps, use a finer die (d1000 extends the range to \(\pm 11\)) or lower
-\(b\).
+The skill factor thus controls two things at the same time: how unstable the
+result is, and how frequently critical results occur.
 
 ## Where b comes from
 
-**Settled: \(b\) is not a free parameter.** It is fixed by how noisy the
-situation is, and it is measured rather than assigned.
+\(b\) is not a free number. It comes from the quantity of noise in the
+situation.
 
-### The derivation
+An action succeeds when the score, multiplied by luck, is more than the
+difficulty. If luck multiplies the score by a random factor, and that factor
+has a spread of \(s\) doublings, then:
 
-Suppose an action succeeds when capability exceeds difficulty, plus whatever
-the rules do not model — wind, footing, fatigue, an opponent's choice. Write
-that unmodelled part as noise \(\varepsilon\):
+\[ b = \frac{1}{s \ln 2} \]
 
-\[ \text{success} \iff \Delta + \varepsilon > 0 \]
+Thus \(s\) is the quantity of luck, and \(b\) is its reciprocal. Measure the
+noise, and the skill factor follows.
 
-If \(\varepsilon\) is logistic with scale \(s\), then the probability of
-success is
+### Noise table
 
-\[ p = \frac{1}{1 + e^{-\Delta / s}} \]
+| Situation | \(s\) | \(b\) |
+|---|---|---|
+| No opponent. Known, unchanging conditions. | 0.10 | 14 |
+| Trained work in a controlled place. | 0.25 | 6 |
+| Casting a correct spell. | 0.40 | 3.5 |
+| A contest against a person who thinks. | 0.75 | 2 |
+| Disorder, or conditions that the rules do not model. | 1.5 | 1 |
+| Almost pure chance. | 6 | 0.25 |
 
-which is our curve exactly, with
+The maximum lift of a trained person changes by 3 to 5 percent from day to day.
+This gives \(b \approx 20\). To lift a known weight is thus almost fully
+reliable, and the table agrees.
 
-\[ \boxed{\; b = \frac{1}{s \ln 2} \;} \]
+### Why spells are reliable and fights are not
 
-So **\(s\) is the spread of luck measured in doublings, and \(b\) is its
-reciprocal.** A task where uncontrolled factors swing the effective outcome by
-half a doubling has \(s = 0.5\) and \(b \approx 2.9\). Nothing else is needed;
-the parameter that looked arbitrary was a noise measurement all along.
+A spell is [a program](../magic/notation.md). A correct spell compiles and
+runs. The act of casting adds very little noise.
 
-??? note "This is a known model"
-    The curve is the two-parameter logistic used in item response theory and in
-    signal detection. There \(\Delta\) is ability minus item difficulty and
-    \(b\) is the *discrimination* parameter, which is inversely proportional to
-    the noise standard deviation. L.E.T.H.A.L. arrived at it from the other
-    direction, but it is the same object, and the psychometric reading is why
-    \(b\) has a measurable referent instead of a taste.
+A fight is the opposite. Your opponent tries to make your model of the
+situation wrong. This is a definition of high noise. Training does not remove
+it, because a different person makes the noise on purpose.
 
-### The table
+Thus low \(b\) belongs to **contests**, not to warriors. To lift a known weight
+is as reliable as to cast a spell. A duel is not.
 
-| Situation | \(s\) | \(b\) | Crit rate | Adjacent level |
-|---|---|---|---|---|
-| Uncontested feat, known static conditions | 0.10 | 14 | ~0% | ~100% |
-| Practised craft in controlled conditions | 0.25 | 6 | 0.2% | 98% |
-| Executing a verified spell | 0.40 | 3.5 | 2% | 92% |
-| Contested action against a thinking opponent | 0.75 | 2 | 11% | 79% |
-| Acting in chaos, or on unmodelled conditions | 1.5 | 1 | 26% | 66% |
-| Near-pure gamble | 6 | 0.25 | 43% | 54% |
+### The character part
 
-Sanity check: day-to-day variation in a trained lifter's maximum is about 3–5%,
-which is \(s \approx 0.05\) and \(b \approx 20\). Lifting a known weight really
-is nearly deterministic, and the table says so.
+Experts are more consistent, not only better. The two sources of noise combine:
 
-### Why casting is high b and fighting is low b
+\[ s^2 = s_{\text{task}}^2 + s_{\text{person}}^2 \]
 
-The brainstorm's instinct — high \(b\) for casting, low for martial work — is
-**correct**, but not because of class. It follows from what those activities
-are in this setting.
+At the table, move one line on the noise table:
 
-A spell is [a program in a formal notation](../magic/notation.md). A correctly
-written spell either compiles and runs or faults; the execution itself
-contributes almost no variance. What variance magic has comes from targeting
-and from unmodelled environmental interaction, not from the casting.
+- Move **down** (less reliable) if the character is hurt, tired, afraid, or has
+  no training in the task.
+- Move **up** (more reliable) if the character has expert training in that
+  skill.
 
-Fighting a person is the opposite. Your opponent is an adversary actively
-working to make your model of the situation wrong. That is close to a
-definition of high noise, and no amount of training removes it, because the
-variance is being generated on purpose by someone else.
+## Limits of the die
 
-So the two rules agree, and the earlier objection — that deadlifting a known
-weight is deterministic and therefore deserves high \(b\) — is answered rather
-than overridden. Deadlifting a known weight *is* high \(b\). It simply is not a
-contest. **The low \(b\) belongs to contests, not to warriors.** An uncontested
-feat of strength is as reliable as a spell; a duel is not.
+The d100 has 100 steps. When \(p\) is more than 99.5%, the die cannot change
+the result. Do not roll. Tell the players what occurs.
 
-### The character term
+This limit occurs sooner when \(b\) is large:
 
-Experts are not merely better on average, they are more *consistent*, and that
-is a measured fact rather than a genre convention. Noise has two sources that
-add in quadrature — one from the task, one from the performer:
+| \(b\) | The die stops being important when \(R\) is more than |
+|---|---|
+| 0.5 | 40000 |
+| 1 | 200 |
+| 2 | 14 |
+| 4 | 4 |
 
-\[ s^2 = s_{\text{task}}^2 + s_{\text{performer}}^2 \]
-
-Since [Composure](ability-scores.md) already measures steadiness under acute
-stress in doublings, the performer term falls out of the existing scale:
-\(s_{\text{performer}} = s_0 \cdot 2^{-\text{Composure}}\). Each point of
-Composure halves your own contribution to the spread.
-
-At the table this does not need algebra. Move one row on the table:
-
-- **Down** (lower \(b\), swingier) when the character is wounded, exhausted,
-  frightened, blind, or attempting something untrained.
-- **Up** (higher \(b\), steadier) for genuine expertise in that specific skill.
-
-Swinginess survives as a penalty, exactly as intended. It just stops being a
-class tax and becomes what it actually is: the mark of a rattled, distracted or
-untrained operator, or of a situation nobody could have modelled.
+At \(b = 4\), a character who is four times better than the task will always
+succeed. This is correct behaviour. It shows you when to stop rolling.

@@ -1,6 +1,6 @@
 # Ability Scores
 
-<p class="hatnote">For how scores resolve into outcomes, see <a href="../">Core Resolution</a>.</p>
+<p class="hatnote">For the rule that uses these scores, see <a href="../">Core Resolution</a>.</p>
 
 <div class="infobox" markdown>
 
@@ -8,283 +8,224 @@
 
 |  |  |
 |---|---|
-| **Scale** | \(\log_2\) of a measured quantity |
-| **Baseline** | 0 = median adult human |
-| **Step** | +1 = twice the quantity |
-| **Range** | Unbounded both ways |
-| **Count** | 19 scores + chassis |
-| **Intelligence** | Deliberately absent |
+| **Scale** | Linear |
+| **Median adult** | 1.00 |
+| **Human range** | 0.35 to 2.8 |
+| **Minimum** | Above zero |
+| **Maximum** | None |
+| **Count** | 19 |
 
 </div>
 
-Every score is the base-2 logarithm of a real, measured quantity, relative to
-the median adult human.
+A score is a measured quantity, divided by the quantity for a median adult
+human.
 
-- **0** — median human
-- **+1** — twice the quantity
-- **−1** — half the quantity
-- No ceiling, no floor
+- **1.00** is a median adult.
+- **2.00** is twice the quantity.
+- **0.50** is half the quantity.
+- There is no maximum. The minimum is a number above zero.
 
-For quantities where lower is better — reaction time, positional error — the
-score is defined as \(\log_2(\text{baseline} \div \text{measured})\), so higher
-always means better.
+Where a small number is better, such as reaction time, the score is the median
+value divided by the measured value. A higher score is thus always better.
 
-## Why logarithms
+## Why the scale is linear
 
-Infinite scaling comes for free, and the scores drop straight into the
-[resolution curve](index.md) as a subtraction. More importantly, the human
-range differs per score — roughly ±1.5 for Force, but only about ±0.6 for
-Latency — and that is *correct*. Real traits do not vary by equal amounts, and
-a simulationist system must not flatten them into a common 3–18.
+The scores are the quantities themselves. A score of 4.0 is four times a score
+of 1.0, in newtons or in watts or in millilitres of oxygen.
+
+The [resolution rule](index.md) uses the ratio \(S/D\), so no conversion is
+necessary at any point. You divide two numbers that are already in the correct
+units.
+
+The human range is not the same for each score. This is correct. Real abilities
+do not vary by equal quantities.
 
 ## The scores
 
 ### Output
 
-| Score | Measures |
+| Score | Measured quantity |
 |---|---|
-| **Force** | Peak force the body applies, in newtons. |
-| **Power** | Peak mechanical power, in watts. Splits from Force because force × velocity dissociates — a powerlifter and a sprinter differ here. |
-| **Stamina** | Aerobic ceiling, and the fraction of peak output sustainable over time. |
-| **Recovery** | Rate of repair: wound healing, immune response, training adaptation. |
+| **Force** | Maximum force, in newtons. |
+| **Power** | Maximum mechanical power, in watts. Force multiplied by speed. |
+| **Stamina** | Maximum oxygen use, and the part of maximum output that the body can hold. |
+| **Recovery** | Speed of repair: wounds, immune response, training effect. |
 
 ### Integrity
 
-| Score | Measures |
+| Score | Measured quantity |
 |---|---|
-| **Toughness** | Mechanical energy absorbed before tissue fails. |
-| **Homeostasis** | Resistance to poison, heat, cold, hypoxia, pressure, dehydration. Chemical and thermal rather than mechanical, so it is a separate system from Toughness. |
+| **Toughness** | Mechanical energy that the body absorbs before tissue breaks. |
+| **Homeostasis** | Resistance to poison, heat, cold, low oxygen, pressure and loss of water. |
 
 ### Control
 
-| Score | Measures |
+| Score | Measured quantity |
 |---|---|
-| **Precision** | Fine-motor accuracy. Inverse of positional error in millimetres. |
-| **Agility** | Whole-body dynamic balance and correction rate. |
-| **Articulation** | Joint range of motion. Carries limb topology for non-human bodies. |
+| **Precision** | Accuracy of small movements. The reciprocal of position error. |
+| **Agility** | Whole-body balance, and speed of correction. |
+| **Articulation** | Range of movement of the joints. Also holds limb layout for bodies that are not human. |
 
 ### Signal
 
-| Score | Measures |
+| Score | Measured quantity |
 |---|---|
-| **Acuity** | Overall sensory gain relative to the median human. See [below](#acuity-is-a-scalar) — this differs from the original draft. |
-| **Latency** | Inverse of sensorimotor loop time. Human ≈ 200 ms; a score of +7 gives 1.5 ms. |
-| **Tempo** | Decision cycles per second. Subjective time dilation, and it governs actions per unit of clock time. |
+| **Acuity** | Sensitivity of the senses. |
+| **Latency** | The reciprocal of loop time from sense to movement. A median adult is near 250 ms. |
+| **Tempo** | Decision cycles each second. This controls how many actions occur in a given time. |
 
 ### Mind
 
-| Score | Measures |
+| Score | Measured quantity |
 |---|---|
-| **Memory** | Encoding fidelity, capacity, recall reliability. |
-| **Attention** | Objects tracked simultaneously, and vigilance duration. |
-| **Composure** | Acute stress: fear, pain, shock, surprise. |
-| **Will** | Sustained load: coercion, deprivation, temptation, exhaustion. |
-| **Plasticity** | Learning rate. Sets how fast skills rise per hour of practice. |
-| **Affect Reading** | Accuracy at detecting emotional and intent states in others. |
-| **Projection** | Expressive output: vocal power and control, signal clarity, appearance. |
+| **Memory** | Accuracy of storage, capacity, and reliability of recall. |
+| **Attention** | Number of objects held at one time, and length of watch. |
+| **Composure** | Resistance to sudden stress: fear, pain, shock, surprise. |
+| **Will** | Resistance to long stress: force, loss, temptation, tiredness. |
+| **Plasticity** | Speed of learning. This sets how quickly skills increase with practice. |
+| **Affect Reading** | Accuracy at finding the feelings and the intentions of other persons. |
+| **Projection** | Output: strength and control of the voice, clarity of signal, appearance. |
 
-## Acuity is a scalar
+## Acuity is one number
 
-The original draft made Acuity a *vector* — one entry per sensory channel —
-while every other score was a scalar. That mixes types, and it is the one part
-of the draft flagged for revision.
+An early draft made Acuity a vector, with one value for each sense. All other
+scores were single numbers. This mixed two different types.
 
-The fix keeps what the vector was protecting. An eagle, a bat and a bloodhound
-genuinely are not "high perception" in the same way, and that distinction must
-survive. It moves to a layer that already exists:
+Acuity is now one number: general sensitivity of the senses.
 
-**Acuity stays a single score** — overall sensory gain, in the same
-\(\log_2\) units as everything else.
+Differences between the senses belong in two other places:
 
-**Per-channel differences live in the chassis** as offsets, because they are
-properties of a body plan rather than of an individual. A generic eagle carries
-`photopic +6`, a bat `hearing +4, echolocation +8`, a bloodhound
-`olfaction +11`. A human's offsets are all zero by definition.
+- **The chassis** holds a factor for each channel, because these belong to a
+  body type and not to an individual. An eagle has a factor of 64 for day
+  vision. A bloodhound has a factor of 2000 for smell. All human factors are
+  1.0.
+- **Skills** hold trained ability: Sight, Hearing, Smell, Taste and Touch.
 
-**Trained discrimination lives in skills** — Sight, Hearing, Smell, Taste,
-Touch — which is where the existing skill list already puts them.
+A check against one sense uses:
 
-A check against one channel therefore reads:
-
-\[ \text{channel score} = \text{Acuity} + \text{chassis offset} + \text{skill} \]
-
-Nothing is lost, the type error is gone, and it reuses the two structures the
-system already has rather than inventing a third. Species offsets get written
-once per body plan and never again, which is exactly the property that made
-them a bad fit for a per-character score.
-
-!!! note "Exotic channels"
-    Echolocation, electroreception and magnetoreception are chassis entries
-    with no human baseline. Give them an absolute reference in their own units
-    rather than a relative offset, since \(\log_2\) of a ratio to zero is
-    undefined.
+\[ \text{channel} = \text{Acuity} \times \text{chassis factor} \times \text{skill} \]
 
 ## Chassis
 
-Not scores. Raw parameters, recorded in real units:
+The chassis is not a set of scores. It is a set of measurements in real units:
 
-**Mass, length, density, basal metabolic rate, limb count, lifespan, sensory
-channel offsets.**
+**Mass, length, density, resting energy use, number of limbs, lifespan, and a
+factor for each sense channel.**
 
-Apply the square-cube law to derive modifiers to Force, Toughness and Stamina
-from mass and length. This is what makes a dragon a dragon rather than a human
-with big numbers — the scaling laws do the work, and you are not hand-waving a
-+40 Force onto something the size of a barn.
+Use the square-cube law to find the effect of mass and length on Force,
+Toughness and Stamina. This is what makes a dragon different from a human with
+large numbers.
 
-## Combining scores
+## How to combine scores
 
-!!! danger "Never add two scores together"
-    Adding logarithms multiplies the underlying quantities. A character with
-    Force +6 and Precision −6 is emphatically not equivalent to one at 0 and 0
-    — they are a thousand times stronger and a thousand times clumsier.
-    Summing the two produces 0 and asserts a mediocrity that is nowhere in the
-    fiction.
+!!! danger "Do not multiply two scores together"
+    Two scores multiplied together give a quantity in different units. A
+    character with Force 4.0 and Precision 0.25 is not equal to a character
+    with 1.0 and 1.0. The first character is four times stronger and four times
+    less accurate.
 
-Two combination rules cover the cases:
+Two rules are sufficient:
 
-**Minimum, for bottlenecks.** Threading a needle is gated by Precision alone.
-No amount of Force fixes it. This matches the Stahlmann–Greenberg reading of
-skill inheritance, and it should be the default.
+**The minimum, for a hard limit.** To put thread through a needle needs
+Precision only. No quantity of Force helps.
 
-**Mean, for genuine trade-offs.** Where two capacities really do substitute for
-one another at the margin — hauling a load either quickly or in more trips —
-average the contributing scores.
+**The geometric mean, when two abilities exchange.** Multiply the two scores
+together, then take the square root. Two scores of 4.0 give a skill of 4.0. A
+score of 4.0 and a score of 1.0 give a skill of 2.0.
 
-Which rule applies is a property of the task and belongs in the task's
-description, not the character sheet.
+The correct rule is a property of the task. Write it in the task, not on the
+character sheet.
 
-## Why there is no Intelligence
+## Why there is no Intelligence score
 
-You cannot roleplay a character more intelligent than you are, so a score
-claiming to measure it produces a number the player cannot cash.
+You cannot play a character who is more intelligent than you are. A score for
+intelligence gives a number that the player cannot use.
 
-Removing it does not remove the tractable parts of cognition. **Memory,
-Attention, Tempo and Plasticity** absorb everything about thinking that dice
-can adjudicate. What is left over is insight, and insight is precisely the part
-the player must supply.
+The parts of thought that dice can control are already present: **Memory,
+Attention, Tempo and Plasticity**. What is left is insight, and the player must
+supply it.
 
-The same objection technically applies to **Affect Reading** and
-**Projection** — you cannot roleplay more perceptive or more compelling than
-you are either. They survive on a different test: their outputs are describable
-by the referee. *"He is lying, and he is frightened"* is a statement the GM can
-make. *"You deduce the correct answer"* is not.
+**Affect Reading** and **Projection** have the same problem, but they stay for
+a different reason. The referee can speak their result. *"He is lying, and he
+is afraid"* is a sentence that the referee can say. *"You find the correct
+answer"* is not.
 
-## Relation to the earlier stat lists
+## Anchor values
 
-The brainstorm worked through several groupings — FATAL's, the
-Bach–Deutschemann Conjecture, the Weiss–Bronzestein Procedure, Aristotle's
-tripartite soul. This list supersedes them, but the mapping is mostly clean:
+Score 1.00 is a median adult of today. These four scores have measured anchors:
 
-| Earlier name | Here |
-|---|---|
-| Strength | Force, Power |
-| Speed | Latency (reaction), Power (movement) |
-| Precision | Precision |
-| Constitution | Toughness, Homeostasis, Stamina |
-| Memory | Memory |
-| Willpower | Will, Composure |
-| Appeal | Projection |
-| Perception | Acuity + chassis offsets |
-| Knowledge | *Not a score* — invest in knowledge skills instead |
+| Score | Measured as | Median adult (1.00) | Best human |
+|---|---|---|---|
+| **Force** | Grip dynamometer | 35 kgf | 2.6 |
+| **Power** | Maximum anaerobic power | 800 W | 2.8 |
+| **Stamina** | Maximum oxygen use | 40 ml/kg/min | 2.1 |
+| **Latency** | Simple visual reaction time | 250 ms | 1.6 |
 
-Dropping Knowledge as a score follows the brainstorm's own conclusion: a
-knowledge stat makes far less sense than putting points into knowledge skills
-directly.
+The best human is between 1.6 and 2.8 times the median. The range is not the
+same for each score. A common scale of 3 to 18 would make these ranges equal,
+which is not correct.
 
-## Anchoring
+A score of more than 3.0 is thus outside the human species.
 
-**Settled: score 0 is anchored to contemporary human performance data**, not to
-a baseline set by hand. Every score should ultimately name a measurement and a
-published distribution, so that a number on a sheet can be checked against the
-world.
+### Scores with weak data
 
-| Score | Measured as | Median adult (0) | Elite human | Δ |
-|---|---|---|---|---|
-| **Force** | Handgrip dynamometry | ≈ 35 kgf (343 N) | ≈ 90 kgf | +1.36 |
-| **Power** | Peak anaerobic power | ≈ 800 W | ≈ 2200 W | +1.46 |
-| **Stamina** | VO₂max | ≈ 40 ml/kg/min | ≈ 85 ml/kg/min | +1.09 |
-| **Latency** | Simple visual reaction time | ≈ 250 ms | ≈ 160 ms | +0.64 |
+Force, Power, Stamina and Latency have good instruments. The other scores do
+not. A system that models reality must say which is which.
 
-!!! note "The data confirms the reason for using logarithms"
-    These four ranges are *not the same width*, and that is the whole argument
-    for the scale. The gap between a median adult and the best human alive is
-    about 1.4 points of Force but only 0.6 points of Latency. A system that
-    forced both into a common 3–18 would be claiming, falsely, that elite
-    reflexes are as far from average as elite strength is. Here the difference
-    is simply recorded.
+- **Good instruments.** Force, Power, Stamina, Recovery, Latency, Precision,
+  Toughness.
+- **Measurable, with difficulty.** Agility, Articulation, Homeostasis,
+  Attention, Memory.
+- **Substitute measure only.** Tempo, Composure, Will, Plasticity, Affect
+  Reading, Projection. Each needs a named substitute measurement, and a note
+  that says the substitute is not the ability.
 
-    It also means **everything human fits in roughly ±1.5**. Any score past +2
-    is already outside the species, which is exactly the property that makes
-    the superhuman range meaningful rather than decorative.
-
-### Where the data is thin
-
-Force, Power, Stamina and Latency have excellent instrumentation. Others do
-not, and a simulationist system should be honest about which is which:
-
-- **Well instrumented.** Force, Power, Stamina, Recovery, Latency, Precision,
-  Toughness — all have standard laboratory measures.
-- **Measurable, with caveats.** Agility, Articulation (goniometry),
-  Homeostasis, Attention, Memory. Real instruments exist but no single number
-  summarises them.
-- **Proxy only.** Tempo, Composure, Will, Plasticity, Affect Reading,
-  Projection. These need a named proxy measurement and an honest note that the
-  proxy is not the thing. Where no proxy exists, the score is a fictional
-  baseline wearing a lab coat, and the page should say so.
-
-Sources for the anchors above: [handgrip norms](https://www.jospt.org/doi/10.2519/jospt.2018.7851),
+Sources: [grip norms](https://www.jospt.org/doi/10.2519/jospt.2018.7851),
 [international grip data](https://www.sciencedirect.com/science/article/pii/S2095254624001741),
-[VO₂max percentiles](https://fitnessnorms.com/cardio/vo-2-max/),
+[oxygen use percentiles](https://fitnessnorms.com/cardio/vo-2-max/),
 [reaction time norms](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7413367/).
 
 <div class="stub" markdown>
-Needs filling in: the remaining fifteen scores, each with a named measurement,
-a median, and a citation. This is the single largest piece of unglamorous work
-left in the system, and every difficulty table depends on it.
+Fifteen scores still have no anchor. Each one needs a measurement, a median
+value and a source. All difficulty tables wait for this work.
 </div>
 
-## Level and scaling
+## Level
 
-**Settled: scores rise linearly with level, so real capability is exponential
-in level.** One level is one point is one doubling.
+Each level multiplies the scores. The scores are linear in the quantity, and
+the quantity increases by a constant factor at each level.
 
-| Level gap | Capability ratio |
+| Levels above | Score becomes |
 |---|---|
-| 1 | 2× |
-| 3 | 8× |
-| 5 | 32× |
-| 10 | 1,024× |
-| 20 | ~1,000,000× |
+| 1 | 2 times |
+| 3 | 8 times |
+| 5 | 32 times |
+| 10 | 1024 times |
+| 20 | 1 million times |
 
-This is what makes unbounded levels mean something. Level 5000 is not a large
-number on a sheet; it is a claim about the world, and the scale takes it
-literally.
+There is no maximum level. Level 5000 is a statement about the world, and the
+scale accepts it.
 
-### What that does to play
+### Effect on play
 
-Since \(\Delta\) between characters is just their level gap, the
-[resolution curve](index.md) turns level differences straight into odds:
+The ratio \(R\) between two characters is set by the difference in their
+levels. The [resolution table](index.md#the-skill-factor) thus also works as a
+table of level differences.
 
-| Level gap | b = 0.5 | b = 1 | b = 2 | b = 4 |
-|---|---|---|---|---|
-| **1** | 58.6% | 66.7% | 80.0% | 94.1% |
-| **Dice stop mattering at** | 15 | 8 | 4 | 2 |
+| Level difference | \(R\) | b = 1 | b = 2 |
+|---|---|---|---|
+| 1 | 2 | 67% | 80% |
+| 2 | 4 | 80% | 94% |
+| 3 | 8 | 89% | 98% |
 
-The second row is the important one. Because d100 caps the swing at ±7.64, a
-gap of \(7.64 / b\) levels makes the roll irrelevant — the outcome is decided
-before the die is picked up.
+Above a difference of 8 levels at \(b = 1\), or 4 levels at \(b = 2\), the die
+cannot change the result. This shows when a character is fully outside the
+class of the opposition.
 
-That is a feature: it defines *out of your league* numerically, and it tells a
-referee when to stop rolling and narrate. But it constrains encounter design
-hard. At \(b = 2\), a four-level gap is already deterministic, so a party
-spanning five levels cannot meaningfully face the same opposition. Parties
-should stay within a couple of levels of each other, and the interesting range
-of opposition is narrow and moves with them.
+Keep the levels in one group close together. A group with a difference of five
+levels cannot use the same opposition.
 
 <div class="stub" markdown>
-Open: whether a level grants one point to one score, or a budget spread across
-several. One-point-per-level keeps the level gap and \(\Delta\) identical,
-which is what makes the table above exact. A budget breaks that identity and
-makes characters of equal level genuinely different, at the cost of the clean
-arithmetic.
+Open: does one level give one increase to one score, or a quantity of increase
+to divide between the scores?
 </div>

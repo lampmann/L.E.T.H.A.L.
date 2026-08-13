@@ -26,32 +26,26 @@ which yours asks for is more useful than generic advice.
 
 ## Setting difficulties
 
-The referee supplies two numbers per situation: the difficulty \(D\), in the
-same logarithmic units as the character's score, and the
+You supply two numbers for each situation: the difficulty \(D\), and the
 [skill factor \(b\)](../rules/index.md#the-skill-factor).
 
-\(D\) is the easier of the two, because it is a claim about the world rather
-than about the fiction: how much force does the door need, how fast is the
-opponent. Setting it means estimating a real quantity and taking its logarithm,
-which is a habit rather than a skill.
+\(D\) uses the same scale as the character's score. A median adult is 1.00.
+Thus a difficulty of 1.00 is a task that a median adult completes half of the
+time. A difficulty of 4.00 needs four times that quantity.
 
-\(b\) decides how the scene feels, since it controls swinginess and crit
-frequency together. Read it off
-[the noise table](../rules/index.md#the-table): ask how many doublings luck
-could swing the outcome, and \(b\) is the reciprocal. A known weight on a firm
-floor is high \(b\); a crumbling ledge in the dark is low; a duel sits in the
-middle because the variance is being generated deliberately by the opponent.
+To set \(D\), name the real quantity first. Then divide it by the quantity for
+a median adult.
 
-Since [score 0 is a median present-day adult](../rules/ability-scores.md#anchoring),
-difficulty 0 is whatever a median adult manages half the time, and each further
-point doubles the demand. A useful habit: name the real quantity first, then
-convert.
+\(b\) controls how the scene feels. Read it from the
+[noise table](../rules/index.md#noise-table). Ask how much luck can change the
+result. A known weight on a firm floor gives a high \(b\). A broken ledge in
+the dark gives a low \(b\). A duel is in the middle, because the opponent
+makes the noise on purpose.
 
 <div class="stub" markdown>
-Needs a worked difficulty ladder — half a dozen anchored examples per score, so
-a referee can interpolate rather than derive each time. Unblocked now that the
-baseline is settled; waiting on the remaining fifteen scores getting their
-anchors.
+A table of example difficulties is necessary. Give six examples for each score,
+so that the referee can interpolate. This waits for the anchors of the other
+fifteen scores.
 </div>
 
 ## Adjudication

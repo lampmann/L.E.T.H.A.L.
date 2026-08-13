@@ -9,7 +9,7 @@ parts rather than a pool of hit points.
 <div class="stub" markdown>
 This page is the least settled in the wiki. The structure below is agreed; the
 numbers are not, and several sub-systems have competing versions recorded in
-[Open Questions](../design/open-questions.md).
+[Open Questions](../notes/open-questions.md).
 </div>
 
 ## Initiative
@@ -83,9 +83,8 @@ distances, and getting there is the game.
 
 <div class="stub" markdown>
 Needs writing: the actual damage-by-range table per weapon, whether the falloff
-is a damage multiplier or a \(\Delta\) penalty (the latter is more consistent
-with the rest of the system), and how reach interacts with the square grid for
-diagonal distances.
+is a damage multiplier or a penalty to the score, and how reach works with the
+square grid for diagonal distances.
 </div>
 
 ## Stamina and wounds

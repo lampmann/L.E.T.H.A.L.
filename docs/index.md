@@ -7,71 +7,76 @@
 |  |  |
 |---|---|
 | **Full title** | Lost Empires, Tactical Heroes, Adult Lechery |
-| **Designers** | Juliett and Sierra |
-| **Genre** | Simulationist fantasy |
-| **Resolution** | Logistic curve, four tiers |
-| **Scores** | \(\log_2\), unbounded |
-| **Levels** | Unbounded |
-| **Editions** | L.E.T.H.A.L.; *Less Than L.E.T.H.A.L.* |
-| **Status** | In development |
+| **Designers** | Juliett, Sierra |
+| **Type** | Tabletop roleplaying game |
+| **Scores** | Linear. No maximum. |
+| **Resolution** | One formula, four results |
+| **Second edition** | *Less Than L.E.T.H.A.L.* |
+| **Condition** | In development |
 
 </div>
 
-**L.E.T.H.A.L.** — *Lost Empires, Tactical Heroes, Adult Lechery* — is a
-simulationist tabletop roleplaying game in development. An expurgated edition,
-***Less Than L.E.T.H.A.L.***, drops the adult material.
+**L.E.T.H.A.L.** is a tabletop roleplaying game. The full title is *Lost
+Empires, Tactical Heroes, Adult Lechery*. A second edition, *Less Than
+L.E.T.H.A.L.*, removes the adult material.
 
-The design brief is realism over balance, at every scale. Ability scores are
-logarithms of measured physical quantities, so they extend into the superhuman
-without a ceiling. Resolution is one continuous curve rather than a die
-mechanic with breakpoints. Magic is a programming language with a type system,
-and its access-control rules double as the setting's metaphysics of death.
+The game models reality before it balances play. Ability scores are measured
+quantities. There is no maximum score and no maximum level. Magic is a
+programming language.
 
-## Design pillars
+## Rules
 
-1. **Realism first.** Where realism and balance conflict, realism wins. Scores
-   measure quantities that exist.
-2. **No ceilings.** Scores, levels and difficulties all scale without bound.
-   The same table resolves a dockworker and a dragon.
-3. **Thinking is the gameplay.** The core loop is solving problems in a
-   fantasy world with your own head. A mage's turn is finding the right answer
-   from a vast array of spells, not spending a resource.
-4. **No Intelligence score.** You cannot roleplay a character smarter than you
-   are. The tractable parts of cognition are scored; insight is the player's to
-   supply.
-5. **Don't repeat yourself.** Aggressive use of tags and templates. The same
-   text should not appear more than a few times.
+- [Core Resolution](rules/index.md) — the formula for all checks.
+- [Ability Scores](rules/ability-scores.md) — nineteen scores and the chassis.
+- [Skills](rules/skills.md) — how to make a skill from two scores.
+- [Combat](rules/combat.md) — time, range, wounds.
+- [Character Creation](rules/character-creation.md) — how to make a character.
 
-## Start here
+## Magic
 
-- **[Core Resolution](rules/index.md)** — the single curve everything runs on,
-  and how to roll it at a table.
-- **[Ability Scores](rules/ability-scores.md)** — nineteen logarithmic scores
-  and the chassis parameters underneath them.
-- **[Combat](rules/combat.md)** — continuous initiative, range bands, wounds.
-- **[Aspects](magic/aspects.md)** — the seven, and what beats what.
-- **[Spell Notation](magic/notation.md)** — magic as a formal language.
-- **[Open Questions](design/open-questions.md)** — what is still undecided.
+- [Aspects](magic/aspects.md) — the five aspects and their matchups.
+- [Spell Notation](magic/notation.md) — the language of spells.
 
-## The state of things
+## For the referee
 
-The resolution mathematics and the ability score scale are settled, and score 0
-is now anchored to [contemporary human performance data](rules/ability-scores.md#anchoring).
-Levels are linear in score and therefore
-[exponential in real capability](rules/ability-scores.md#level-and-scaling).
-The magic system's notation and rank ladder are settled in structure, unsettled
-in numbers. Combat has an agreed shape and no tables yet.
+- [Running the Game](gm/index.md) — preparation and adjudication.
 
-[b is settled too](rules/index.md#where-b-comes-from): it is the reciprocal of
-how noisy a situation is, measured rather than assigned. Skills combine by
-[mean rather than minimum](rules/skills.md).
+## Reference
 
-The biggest outstanding jobs are anchoring the remaining fifteen scores,
-[reconciling the two score lists](design/open-questions.md#which-score-list-is-canonical),
-and deciding whether
-[aspects and verbs are the same axis](design/open-questions.md#do-aspects-and-verbs-occupy-the-same-axis).
+- [Glossary](glossary.md) — terms used in this wiki.
+- [Editing This Wiki](contributing.md) — how to write a page.
 
-See [Decisions](design/decisions.md) for what has been settled and why, and
-[Open Questions](design/open-questions.md) for what has not. Pages carrying a
-stub notice are placeholders; [Editing This Wiki](contributing.md) covers house
-conventions.
+## Design notes
+
+The [Design Notes](notes/index.md) section is separate. It holds the reasons
+for the rules, the questions that are open, and a scratchpad. Those pages
+contradict each other. Do not use them to learn the game.
+
+## Design rules
+
+1. **Model reality first.** If reality and balance disagree, follow reality.
+2. **No maximum.** Scores, levels and difficulties have no upper limit. One
+   table gives the result for a dock worker and for a dragon.
+3. **The player thinks.** The game is about solving problems. A mage finds the
+   correct answer from many spells.
+4. **No Intelligence score.** You cannot play a character more intelligent than
+   you are.
+5. **Do not repeat text.** Use tags and templates.
+
+## Condition of the wiki
+
+The resolution formula and the score scale are complete. Four of the nineteen
+scores have measured anchors. The magic notation has a structure but no
+numbers. Combat has a structure but no tables.
+
+The largest tasks that remain:
+
+- Give anchors to the other fifteen scores.
+- [Choose one score list](notes/open-questions.md#which-score-list-is-correct).
+- [Decide if aspects and verbs are the same axis](notes/open-questions.md#do-aspects-and-verbs-occupy-the-same-axis).
+
+A page with a box like this is not complete:
+
+<div class="stub" markdown>
+This is a placeholder. It tells you what is missing.
+</div>

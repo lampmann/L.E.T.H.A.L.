@@ -10,7 +10,7 @@ and casting it is executing that expression. This page defines the operators.
     freely to them. The [aspect system](aspects.md) now gives each aspect its
     own basic operation, which may mean the two are the same axis rather than
     two. Until
-    [that resolves](../design/open-questions.md#do-aspects-and-verbs-occupy-the-same-axis),
+    [that resolves](../notes/open-questions.md#do-aspects-and-verbs-occupy-the-same-axis),
     the operator grammar here stands but its relationship to aspects does not.
 
     Examples still use the superseded alchemical signs (🜂 fire, 🜍 soul,
@@ -194,7 +194,7 @@ marked outdated, and which the current material contradicts twice over. The
 likely correction is no \(b\) penalty at all: a daemon executes a verified
 program exactly as a mage does, its cost is mana and components, and the real
 hazard is possession rather than unreliability. See
-[Open Questions](../design/open-questions.md#do-daemons-carry-extra-variance).
+[Open Questions](../notes/open-questions.md#do-daemons-carry-extra-variance).
 </div>
 
 ## Geometry
