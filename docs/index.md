@@ -55,11 +55,17 @@ and its access-control rules double as the setting's metaphysics of death.
 
 ## The state of things
 
-The resolution mathematics and the ability score scale are settled. The magic
-system's notation and rank ladder are settled in structure, unsettled in
-numbers. Combat has an agreed shape and no tables yet. Character creation is
-blocked on [how b gets assigned](design/open-questions.md#how-is-b-assigned)
-and [what anchors the baseline](design/open-questions.md#what-anchors-the-baseline).
+The resolution mathematics and the ability score scale are settled, and score 0
+is now anchored to [contemporary human performance data](rules/ability-scores.md#anchoring).
+Levels are linear in score and therefore
+[exponential in real capability](rules/ability-scores.md#level-and-scaling).
+The magic system's notation and rank ladder are settled in structure, unsettled
+in numbers. Combat has an agreed shape and no tables yet.
 
-Pages carrying a stub notice are placeholders. See
-[Editing This Wiki](contributing.md) for house conventions.
+The biggest outstanding jobs are anchoring the remaining fifteen scores and
+deciding [how b gets assigned](design/open-questions.md#how-is-b-assigned).
+
+See [Decisions](design/decisions.md) for what has been settled and why, and
+[Open Questions](design/open-questions.md) for what has not. Pages carrying a
+stub notice are placeholders; [Editing This Wiki](contributing.md) covers house
+conventions.

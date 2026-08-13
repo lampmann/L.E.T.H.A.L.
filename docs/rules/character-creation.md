@@ -5,11 +5,14 @@
 How a player makes someone to play in L.E.T.H.A.L.
 
 <div class="stub" markdown>
-Blocked, not merely unwritten. The [scores](ability-scores.md) exist and the
-[curve](index.md) is settled, but creation cannot be specified until
-[how \(b\) is assigned](../design/open-questions.md#how-is-b-assigned) and
-[what anchors the baseline](../design/open-questions.md#what-anchors-the-baseline)
-are decided. Both change what a starting number means.
+Partly unblocked. The [scores](ability-scores.md) exist, the [curve](index.md)
+is settled, and a starting number now means something concrete —
+[score 0 is a median present-day adult](ability-scores.md#anchoring), so a
+starting character sits within about ±1.5 of that on most scores.
+
+Two things still gate a full write-up:
+[how \(b\) is assigned](../design/open-questions.md#how-is-b-assigned), and
+[what a level actually grants](../design/open-questions.md#what-does-a-level-actually-grant).
 </div>
 
 ## At a glance

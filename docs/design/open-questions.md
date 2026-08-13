@@ -4,7 +4,7 @@ Decisions the system is currently blocked on or actively split over. Each entry
 states the question, the options on the table, and what depends on the answer.
 
 Settle the ones marked **load-bearing** first — other pages cannot be written
-until they resolve.
+until they resolve. For questions already answered, see [Decisions](decisions.md).
 
 ## Resolution
 
@@ -24,33 +24,26 @@ deadlifting a known weight is nearly deterministic, casting into unmodelled
 conditions is not. The objection to the second is that it costs the design its
 class identity, and requires the GM to set a number per situation.
 
-### What anchors the baseline?
+### What does a level actually grant?
 
-**Load-bearing.** Score 0 is "the median adult human", but that has to point at
-something.
+Settled that [scores are linear in level](decisions.md#scores-are-linear-in-level-power-is-exponential).
+Still open is whether a level grants one point to one score, or a budget spread
+across several.
 
-- **Published human performance data** — grip dynamometry, VO₂max
-  distributions, simple reaction time norms. Every score gets a real referent
-  and the system earns the word simulationist.
-- **A fictional baseline set by hand**, tuned for play.
+One point per level keeps the level gap and \(\Delta\) numerically identical,
+which makes every level-difference table exact. A budget breaks that identity
+but lets two characters of equal level be genuinely different, which is most of
+what character building is for.
 
-This changes every table in the book, so it wants deciding before any of them
-are written.
+### Anchoring the remaining fifteen scores
 
-### Is level linear or logarithmic?
+Settled that [anchors come from contemporary human data](decisions.md#score-0-is-anchored-to-contemporary-human-data),
+and Force, Power, Stamina and Latency are done. The other fifteen each need a
+named measurement, a median, and a citation — and for Will, Composure,
+Projection and the rest, an honest note about what the proxy does not capture.
 
-The notes want power, narrative relevance and wealth to be **linear** in level.
-Ability scores are **logarithmic**. Both cannot hold at once:
-
-- If scores rise linearly with level, real capability doubles per level and
-  power is *exponential* in level.
-- If power is linear in level, scores must rise as \(\log_2(\text{level})\),
-  which means a level 5000 character is only about 12 points above a level 1.
-
-The second reading makes "level 5000" meaningful as a statement about the
-world rather than about a character sheet, and keeps \(\Delta\) inside the
-range dice can express. The first matches most players' intuitions about what
-levelling feels like.
+The largest remaining piece of unglamorous work in the system. Every difficulty
+table waits on it.
 
 ### Aspects in linear or log space?
 
@@ -90,6 +83,11 @@ privileged over the rest of play.
 
 Unresolved: how many skills, and whether the knowledge tree gets its full
 academic hierarchy or collapses to a handful of fields.
+
+Note that [the setting is original rather than period-accurate](decisions.md#the-setting-is-original-not-period-accurate),
+so the knowledge tree is no longer obliged to mirror a medieval curriculum. It
+should be built from what the setting contains — which means the setting needs
+enough substance to generate one.
 
 ## Combat
 

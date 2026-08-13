@@ -191,9 +191,100 @@ Dropping Knowledge as a score follows the brainstorm's own conclusion: a
 knowledge stat makes far less sense than putting points into knowledge skills
 directly.
 
+## Anchoring
+
+**Settled: score 0 is anchored to contemporary human performance data**, not to
+a baseline set by hand. Every score should ultimately name a measurement and a
+published distribution, so that a number on a sheet can be checked against the
+world.
+
+| Score | Measured as | Median adult (0) | Elite human | Δ |
+|---|---|---|---|---|
+| **Force** | Handgrip dynamometry | ≈ 35 kgf (343 N) | ≈ 90 kgf | +1.36 |
+| **Power** | Peak anaerobic power | ≈ 800 W | ≈ 2200 W | +1.46 |
+| **Stamina** | VO₂max | ≈ 40 ml/kg/min | ≈ 85 ml/kg/min | +1.09 |
+| **Latency** | Simple visual reaction time | ≈ 250 ms | ≈ 160 ms | +0.64 |
+
+!!! note "The data confirms the reason for using logarithms"
+    These four ranges are *not the same width*, and that is the whole argument
+    for the scale. The gap between a median adult and the best human alive is
+    about 1.4 points of Force but only 0.6 points of Latency. A system that
+    forced both into a common 3–18 would be claiming, falsely, that elite
+    reflexes are as far from average as elite strength is. Here the difference
+    is simply recorded.
+
+    It also means **everything human fits in roughly ±1.5**. Any score past +2
+    is already outside the species, which is exactly the property that makes
+    the superhuman range meaningful rather than decorative.
+
+### Where the data is thin
+
+Force, Power, Stamina and Latency have excellent instrumentation. Others do
+not, and a simulationist system should be honest about which is which:
+
+- **Well instrumented.** Force, Power, Stamina, Recovery, Latency, Precision,
+  Toughness — all have standard laboratory measures.
+- **Measurable, with caveats.** Agility, Articulation (goniometry),
+  Homeostasis, Attention, Memory. Real instruments exist but no single number
+  summarises them.
+- **Proxy only.** Tempo, Composure, Will, Plasticity, Affect Reading,
+  Projection. These need a named proxy measurement and an honest note that the
+  proxy is not the thing. Where no proxy exists, the score is a fictional
+  baseline wearing a lab coat, and the page should say so.
+
+Sources for the anchors above: [handgrip norms](https://www.jospt.org/doi/10.2519/jospt.2018.7851),
+[international grip data](https://www.sciencedirect.com/science/article/pii/S2095254624001741),
+[VO₂max percentiles](https://fitnessnorms.com/cardio/vo-2-max/),
+[reaction time norms](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7413367/).
+
 <div class="stub" markdown>
-Still open: whether scores are anchored to published human performance data
-(grip dynamometry, VO₂max distributions, simple reaction time norms) or to a
-fictional baseline set by hand. This changes every table in the book and is
-tracked in [Open Questions](../design/open-questions.md#what-anchors-the-baseline).
+Needs filling in: the remaining fifteen scores, each with a named measurement,
+a median, and a citation. This is the single largest piece of unglamorous work
+left in the system, and every difficulty table depends on it.
+</div>
+
+## Level and scaling
+
+**Settled: scores rise linearly with level, so real capability is exponential
+in level.** One level is one point is one doubling.
+
+| Level gap | Capability ratio |
+|---|---|
+| 1 | 2× |
+| 3 | 8× |
+| 5 | 32× |
+| 10 | 1,024× |
+| 20 | ~1,000,000× |
+
+This is what makes unbounded levels mean something. Level 5000 is not a large
+number on a sheet; it is a claim about the world, and the scale takes it
+literally.
+
+### What that does to play
+
+Since \(\Delta\) between characters is just their level gap, the
+[resolution curve](index.md) turns level differences straight into odds:
+
+| Level gap | b = 0.5 | b = 1 | b = 2 | b = 4 |
+|---|---|---|---|---|
+| **1** | 58.6% | 66.7% | 80.0% | 94.1% |
+| **Dice stop mattering at** | 15 | 8 | 4 | 2 |
+
+The second row is the important one. Because d100 caps the swing at ±7.64, a
+gap of \(7.64 / b\) levels makes the roll irrelevant — the outcome is decided
+before the die is picked up.
+
+That is a feature: it defines *out of your league* numerically, and it tells a
+referee when to stop rolling and narrate. But it constrains encounter design
+hard. At \(b = 2\), a four-level gap is already deterministic, so a party
+spanning five levels cannot meaningfully face the same opposition. Parties
+should stay within a couple of levels of each other, and the interesting range
+of opposition is narrow and moves with them.
+
+<div class="stub" markdown>
+Open: whether a level grants one point to one score, or a budget spread across
+several. One-point-per-level keeps the level gap and \(\Delta\) identical,
+which is what makes the table above exact. A budget breaks that identity and
+makes characters of equal level genuinely different, at the cost of the clean
+arithmetic.
 </div>

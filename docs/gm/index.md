@@ -41,10 +41,16 @@ swinginess and crit frequency. Until
 judge it by how completely the rules capture the situation — a known weight on
 a firm floor is high \(b\), a crumbling ledge in the dark is low.
 
+Since [score 0 is a median present-day adult](../rules/ability-scores.md#anchoring),
+difficulty 0 is whatever a median adult manages half the time, and each further
+point doubles the demand. A useful habit: name the real quantity first, then
+convert.
+
 <div class="stub" markdown>
-Needs a worked difficulty ladder: half a dozen anchored examples per score, so
-a referee can interpolate rather than derive. Blocked on
-[what anchors the baseline](../design/open-questions.md#what-anchors-the-baseline).
+Needs a worked difficulty ladder — half a dozen anchored examples per score, so
+a referee can interpolate rather than derive each time. Unblocked now that the
+baseline is settled; waiting on the remaining fifteen scores getting their
+anchors.
 </div>
 
 ## Adjudication

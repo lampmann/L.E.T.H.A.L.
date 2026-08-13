@@ -46,6 +46,11 @@ Hitstun
 :   Delay added to a victim's next priority by being hit. The mechanism behind
     tempo advantage. See [Combat](rules/combat.md#hitstun).
 
+Level
+:   Advancement track. One level is one point of score, and therefore one
+    doubling of real capability. Unbounded. See
+    [Level and scaling](rules/ability-scores.md#level-and-scaling).
+
 Lich
 :   Undead that walks free rather than being controlled, sustained by a
     tefillah. In notation, an entity that has transferred ownership of its own

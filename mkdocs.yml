@@ -109,6 +109,7 @@ nav:
   - Game Master:
       - Running the Game: gm/index.md
   - Design:
+      - Decisions: design/decisions.md
       - Open Questions: design/open-questions.md
   - Reference:
       - Glossary: glossary.md
