@@ -1,0 +1,97 @@
+site_name: L.E.T.H.A.L.
+site_description: The official wiki for the L.E.T.H.A.L. tabletop roleplaying game.
+site_author: lampmann
+site_url: https://lampmann.github.io/L.E.T.H.A.L./
+
+repo_name: lampmann/L.E.T.H.A.L.
+repo_url: https://github.com/lampmann/L.E.T.H.A.L.
+edit_uri: edit/main/docs/
+
+# Licence is undecided. Until you choose one, this asserts copyright without
+# granting anything. See "Licensing" in README.md for how to set it.
+copyright: Copyright &copy; 2026 lampmann. Licence to be confirmed.
+
+theme:
+  name: material
+  language: en
+  # System fonts, like Wikipedia. Keeps the wiki fast and avoids a Google Fonts request.
+  font: false
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.action.edit
+    - content.tooltips
+
+extra_css:
+  - stylesheets/wiki.css
+
+plugins:
+  - search
+
+markdown_extensions:
+  # Wiki furniture: infoboxes, footnotes, definition lists, abbreviations.
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.smartsymbols
+  # Abbreviations live outside docs/ so they are appended to every page
+  # without also being built as a page of their own.
+  - pymdownx.snippets:
+      base_path:
+        - includes
+      auto_append:
+        - abbreviations.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lampmann/L.E.T.H.A.L.
+      name: L.E.T.H.A.L. on GitHub
+
+nav:
+  - Home: index.md
+  - Rules:
+      - Core Rules: rules/index.md
+      - Character Creation: rules/character-creation.md
+  - Game Master:
+      - Running the Game: gm/index.md
+  - Reference:
+      - Glossary: glossary.md
+      - Editing This Wiki: contributing.md

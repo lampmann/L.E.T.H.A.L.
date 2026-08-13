@@ -1,0 +1,311 @@
+/*
+ * L.E.T.H.A.L. wiki skin
+ * -----------------------------------------------------------------------------
+ * Retunes MkDocs Material toward the look of Wikipedia (Vector) and the
+ * Miraheze wikis: system sans body text, serif headings with a rule beneath
+ * them, blue links, and grey-bordered tables. All colours are defined per
+ * scheme so light and dark both stay legible.
+ */
+
+/* ---------------------------------------------------------------- palette -- */
+
+[data-md-color-scheme="default"] {
+  --wiki-text: #202122;
+  --wiki-text-muted: #54595d;
+  --wiki-link: #3366cc;
+  --wiki-link-visited: #795cb2;
+  --wiki-link-new: #d73333; /* "red link" — page does not exist yet */
+  --wiki-border: #a2a9b1;
+  --wiki-border-soft: #c8ccd1;
+  --wiki-surface: #f8f9fa;
+  --wiki-surface-alt: #eaecf0;
+
+  --md-typeset-a-color: var(--wiki-link);
+  --md-default-fg-color: var(--wiki-text);
+  --md-typeset-color: var(--wiki-text);
+}
+
+[data-md-color-scheme="slate"] {
+  --wiki-text: #e6e6e6;
+  --wiki-text-muted: #a6a6a6;
+  --wiki-link: #88a4e8;
+  --wiki-link-visited: #b4a0dc;
+  --wiki-link-new: #e88;
+  --wiki-border: #4a4f55;
+  --wiki-border-soft: #3a3f45;
+  --wiki-surface: #23262b;
+  --wiki-surface-alt: #2b2f35;
+
+  --md-typeset-a-color: var(--wiki-link);
+}
+
+/* ------------------------------------------------------------- typography -- */
+
+body,
+input,
+.md-typeset {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+.md-typeset {
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+/* Serif headings, unbolded, with the Wikipedia underline on the top levels. */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: "Linux Libertine", Georgia, "Times New Roman", Times, serif;
+  font-weight: normal;
+  color: var(--wiki-text);
+  letter-spacing: normal;
+}
+
+.md-typeset h1 {
+  font-size: 1.7rem;
+  line-height: 1.3;
+  margin: 0 0 0.4rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--wiki-border);
+}
+
+.md-typeset h2 {
+  font-size: 1.2rem;
+  margin: 1.4rem 0 0.5rem;
+  padding-bottom: 0.15rem;
+  border-bottom: 1px solid var(--wiki-border);
+}
+
+.md-typeset h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.1rem 0 0.4rem;
+}
+
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Wikipedia keeps visited links distinct — useful when browsing a big wiki. */
+.md-typeset a:visited {
+  color: var(--wiki-link-visited);
+}
+
+.md-typeset a:hover {
+  text-decoration: underline;
+}
+
+/* A "red link": mark a page you intend to write but haven't. */
+.md-typeset a.new,
+.md-typeset .new > a {
+  color: var(--wiki-link-new);
+}
+
+/* ---------------------------------------------------------------- chrome -- */
+
+/* Flat header with a hairline rule instead of Material's drop shadow. */
+.md-header {
+  box-shadow: none;
+  border-bottom: 1px solid var(--wiki-border);
+}
+
+.md-header--shadow {
+  box-shadow: none;
+}
+
+.md-tabs {
+  border-bottom: 1px solid var(--wiki-border);
+}
+
+/* Slightly wider column than Material's default — encyclopedia, not manual. */
+.md-grid {
+  max-width: 68rem;
+}
+
+/* Hairline between the sidebars and the article body. */
+.md-sidebar--primary {
+  border-right: 1px solid var(--wiki-border-soft);
+}
+
+.md-sidebar--secondary {
+  border-left: 1px solid var(--wiki-border-soft);
+}
+
+.md-nav {
+  font-size: 0.68rem;
+}
+
+.md-nav__title {
+  font-weight: 600;
+  color: var(--wiki-text-muted);
+}
+
+.md-footer-meta {
+  font-size: 0.7rem;
+}
+
+/* ---------------------------------------------------------------- tables -- */
+
+.md-typeset table:not([class]) {
+  border: 1px solid var(--wiki-border);
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 0.72rem;
+  background-color: var(--wiki-surface);
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--wiki-surface-alt);
+  color: var(--wiki-text);
+  font-weight: 600;
+  border: 1px solid var(--wiki-border);
+  text-align: left;
+}
+
+.md-typeset table:not([class]) td {
+  border: 1px solid var(--wiki-border);
+  vertical-align: top;
+}
+
+/* Wikitables are dense — Material's default row padding is roughly double. */
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+  padding: 0.4em 0.6em;
+}
+
+/*
+ * Roll tables read better with the die column centred and narrow. Wrap the
+ * table in <div class="roll-table" markdown> ... </div> to get this.
+ */
+.md-typeset .roll-table table:not([class]) th:first-child,
+.md-typeset .roll-table table:not([class]) td:first-child {
+  text-align: center;
+  white-space: nowrap;
+  width: 6em;
+}
+
+/* --------------------------------------------------------------- infobox -- */
+
+/*
+ * Usage (needs md_in_html — the `markdown` attribute is required):
+ *
+ * <div class="infobox" markdown>
+ * ### Name of the thing
+ * | | |
+ * |---|---|
+ * | **Type** | Sidearm |
+ * </div>
+ */
+.md-typeset .infobox {
+  float: right;
+  clear: right;
+  width: 22em;
+  max-width: 100%;
+  margin: 0 0 1em 1.5em;
+  padding: 0.5em;
+  border: 1px solid var(--wiki-border);
+  background-color: var(--wiki-surface);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.md-typeset .infobox > :first-child {
+  margin-top: 0;
+}
+
+.md-typeset .infobox > :last-child {
+  margin-bottom: 0;
+}
+
+.md-typeset .infobox h2,
+.md-typeset .infobox h3,
+.md-typeset .infobox h4 {
+  margin: 0 0 0.5em;
+  padding: 0.25em;
+  border: none;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 700;
+  background-color: var(--wiki-surface-alt);
+}
+
+.md-typeset .infobox table:not([class]) {
+  border: none;
+  width: 100%;
+  font-size: 1em;
+  background: none;
+}
+
+.md-typeset .infobox table:not([class]) th,
+.md-typeset .infobox table:not([class]) td {
+  border: none;
+  border-bottom: 1px solid var(--wiki-border-soft);
+  padding: 0.3em 0.4em;
+  background: none;
+}
+
+.md-typeset .infobox table:not([class]) th {
+  width: 40%;
+  white-space: nowrap;
+}
+
+/* The infobox stacks above the text on phones rather than squeezing it. */
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .infobox {
+    float: none;
+    width: 100%;
+    margin: 0 0 1em;
+  }
+}
+
+/* --------------------------------------------------------------- notices -- */
+
+/* Hatnote: the italic "see also" line that sits under a heading. */
+.md-typeset .hatnote {
+  margin: 0 0 1em 1.6em;
+  font-style: italic;
+  color: var(--wiki-text-muted);
+}
+
+/* Stub / draft banner for pages that are still placeholders. */
+.md-typeset .stub {
+  /* flow-root keeps the box beside a floated infobox instead of under it. */
+  display: flow-root;
+  margin: 1.5em 0;
+  padding: 0.5em 0.8em;
+  border: 1px solid var(--wiki-border-soft);
+  border-left: 4px solid var(--wiki-border);
+  background-color: var(--wiki-surface);
+  font-size: 0.72rem;
+  font-style: italic;
+  color: var(--wiki-text-muted);
+}
+
+.md-typeset .stub p {
+  margin: 0.3em 0;
+}
+
+/* Flatten Material's admonitions into wiki-style message boxes. */
+.md-typeset .admonition,
+.md-typeset details {
+  display: flow-root;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid var(--wiki-border-soft);
+  font-size: 0.72rem;
+}
+
+/* Abbreviations from includes/abbreviations.md get a dotted underline. */
+.md-typeset abbr {
+  border-bottom: 1px dotted var(--wiki-border);
+  text-decoration: none;
+  cursor: help;
+}
