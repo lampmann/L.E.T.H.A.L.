@@ -1,9 +1,20 @@
 # Spell Notation
 
-<p class="hatnote">For the seven aspects these operators act on, see <a href="../aspects/">Aspects</a>.</p>
+<p class="hatnote">For the aspects these operators act on, see <a href="../aspects/">Aspects</a>.</p>
 
 Magic is programming. A spell is an expression written in a formal notation,
 and casting it is executing that expression. This page defines the operators.
+
+!!! warning "This page is ahead of the aspect revision"
+    The model below treats aspects as *types* and verbs as *operators* applying
+    freely to them. The [aspect system](aspects.md) now gives each aspect its
+    own basic operation, which may mean the two are the same axis rather than
+    two. Until
+    [that resolves](../design/open-questions.md#do-aspects-and-verbs-occupy-the-same-axis),
+    the operator grammar here stands but its relationship to aspects does not.
+
+    Examples still use the superseded alchemical signs (🜂 fire, 🜍 soul,
+    ☿ spirit) because the named aspects have no notation yet.
 
 ## The model
 
@@ -177,9 +188,13 @@ shape of the real-world argument the setting is about. Handing critical,
 narrow-tolerance work to a daemon is the mistake — not using one at all.
 
 <div class="stub" markdown>
-Open: the exact \(b\) penalty per daemon generation, and whether generations
-5–6 close the gap entirely. See
-[Open Questions](../design/open-questions.md#how-much-variance-do-daemons-carry).
+**Under revision.** The variance penalty above rests on the claim that a
+daemon's obedience is only ever statistical — which comes from a passage now
+marked outdated, and which the current material contradicts twice over. The
+likely correction is no \(b\) penalty at all: a daemon executes a verified
+program exactly as a mage does, its cost is mana and components, and the real
+hazard is possession rather than unreliability. See
+[Open Questions](../design/open-questions.md#do-daemons-carry-extra-variance).
 </div>
 
 ## Geometry

@@ -35,11 +35,12 @@ than about the fiction: how much force does the door need, how fast is the
 opponent. Setting it means estimating a real quantity and taking its logarithm,
 which is a habit rather than a skill.
 
-\(b\) is the one that decides how the scene feels, since it controls both
-swinginess and crit frequency. Until
-[its assignment rule is settled](../design/open-questions.md#how-is-b-assigned),
-judge it by how completely the rules capture the situation — a known weight on
-a firm floor is high \(b\), a crumbling ledge in the dark is low.
+\(b\) decides how the scene feels, since it controls swinginess and crit
+frequency together. Read it off
+[the noise table](../rules/index.md#the-table): ask how many doublings luck
+could swing the outcome, and \(b\) is the reciprocal. A known weight on a firm
+floor is high \(b\); a crumbling ledge in the dark is low; a duel sits in the
+middle because the variance is being generated deliberately by the opponent.
 
 Since [score 0 is a median present-day adult](../rules/ability-scores.md#anchoring),
 difficulty 0 is whatever a median adult manages half the time, and each further

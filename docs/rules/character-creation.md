@@ -10,9 +10,10 @@ is settled, and a starting number now means something concrete —
 [score 0 is a median present-day adult](ability-scores.md#anchoring), so a
 starting character sits within about ±1.5 of that on most scores.
 
-Two things still gate a full write-up:
-[how \(b\) is assigned](../design/open-questions.md#how-is-b-assigned), and
+One thing still gates a full write-up:
 [what a level actually grants](../design/open-questions.md#what-does-a-level-actually-grant).
+Whether a level is one point or a budget decides what a player is handed to
+spend.
 </div>
 
 ## At a glance

@@ -8,22 +8,6 @@ until they resolve. For questions already answered, see [Decisions](decisions.md
 
 ## Resolution
 
-### How is b assigned?
-
-**Load-bearing.** [\(b\)](../rules/index.md#the-skill-factor) sets swinginess,
-crit rate, and how much the ability scores matter at all.
-
-- **By activity type**, as the brainstorm has it: high for casting, low for
-  martial work, with inconsistency as the price of playing a warrior.
-- **Emergent**, from a task term (how completely the rules model the situation)
-  plus a character term rising with Composure, Attention and Will.
-
-The objection to the first is that it is the only rule in the system not
-derived from a modelled quantity, and it runs backwards from the physics —
-deadlifting a known weight is nearly deterministic, casting into unmodelled
-conditions is not. The objection to the second is that it costs the design its
-class identity, and requires the GM to set a number per situation.
-
 ### What does a level actually grant?
 
 Settled that [scores are linear in level](decisions.md#scores-are-linear-in-level-power-is-exponential).
@@ -57,21 +41,17 @@ aspect. Deciding this fixes whether
 
 ## Character
 
-### How do skills combine with scores?
+### Which score list is canonical?
 
-Both recorded proposals agree that skills inherit from other skills and scores
-— juggling inherits from hand-eye coordination and reaction speed. They differ
-on what happens when a task needs several:
+**Load-bearing.** The [skill list](../rules/skills.md#the-skill-list) pairs
+eight scores; [Ability Scores](../rules/ability-scores.md) defines nineteen.
+Pairing nineteen is not viable at 171 combinations, so the fix is to keep the
+fifteen skill names and re-parent them onto the nineteen — but that has to be
+done deliberately, because several of the nineteen absorb a pair outright.
 
-- **Vermahn–Goldwynn**: make multiple checks, one per contributing stat.
-- **Stahlmann–Greenberg**: make one check, taking the **minimum** of the
-  contributing stats. Skills may also carry prerequisites; failing to meet one
-  incurs a penalty, but prerequisites do not enter the minimum.
-
-Stahlmann–Greenberg is one roll instead of three and matches the
-[bottleneck rule](../rules/ability-scores.md#combining-scores) already adopted
-for scores. Vermahn–Goldwynn models compound failure more honestly — a juggler
-really can drop the pattern in several independent ways.
+Note also the name collision: **Composure** is currently both a skill and an
+ability score, and the [b rule](../rules/index.md#the-character-term) refers to
+the score. One of the two needs renaming.
 
 ### What is the skill list?
 
@@ -121,22 +101,46 @@ diagonal distance works for reach weapons.
 
 ## Magic
 
-### Seven aspects or eight?
+### Do aspects and verbs occupy the same axis?
 
-Seven gives the tria prima plus the four classical elements, in order, with a
-clean cycle where each aspect beats two and loses to two. Eight makes the count
-a power of two and allows a genuinely neutral aspect alongside a seven-cycle —
-at the cost of letting a caster opt out of the matchup system, which the notes
-already flag as the least interesting option available.
+**Load-bearing.** Each aspect now carries a
+[basic database operation](../magic/aspects.md#the-five) — Hylogenesis *is*
+Create, Pyrolysis *is* Delete. But [Spell Notation](../magic/notation.md#verbs)
+treats the five verbs as operators applying freely to any aspect, giving
+thirty-five primitives. Both cannot be true as written.
 
-### How much variance do daemons carry?
+Three readings, in [The consequence nobody has priced in yet](../magic/aspects.md#the-consequence-nobody-has-priced-in-yet):
+aspects absorb the verbs; verbs stay orthogonal and the operation is only
+flavour; or the two sit at different layers with the compiler mapping between
+them. Until this resolves, neither magic page is stable.
 
-If [daemons are the optimal play](../magic/notation.md#daemons-should-be-the-optimal-play),
-their cost is variance — a lower \(b\) than the mage would roll. Open: the size
-of that penalty, whether it differs per daemon generation, and whether fifth-
-and sixth-generation daemons close the gap entirely. If they do, the setting's
-central anxiety stops being mechanically expressed at the top end, which may be
-exactly right.
+### Five aspects or seven?
+
+Five maps exactly onto the five classical elements and the five database
+operations, and gives a wheel with **no neutral matchups at all** — every
+exchange is decisive. Seven needs two more elements and two more operations to
+justify itself, and buys a third of all pairings being ties, which lets a
+caster pick an aspect that is merely irrelevant rather than actively bad.
+
+Aggression versus room to breathe, rather than a question about tidy numbers.
+
+### Do daemons carry extra variance?
+
+**Needs revisiting.** The wiki currently says
+[daemons resolve at lower \(b\)](../magic/notation.md#daemons-should-be-the-optimal-play),
+justified by the claim that no binder can prove a daemon's obedience is more
+than a statistical tendency.
+
+That claim comes from a section of the source notes now marked outdated, and
+the current material undercuts it twice: the anti-daemon movement's objections
+are explicitly *not* substantively arguable from an outside view, and the
+movement was itself manufactured. If daemons are simply good, then a variance
+penalty encodes the luddite position into the mechanics — the opposite of what
+the fiction says.
+
+The likely fix is that daemons carry **no** \(b\) penalty; a daemon executes a
+verified program exactly as a mage does. Their cost is mana, water and
+components, and the real risk is *daemon possession* rather than unreliability.
 
 ### Mana economy
 

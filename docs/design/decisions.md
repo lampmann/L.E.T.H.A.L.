@@ -7,6 +7,61 @@ Each entry stays here permanently. When a decision is reversed, the entry is
 amended rather than deleted — knowing what was tried and rejected is worth more
 than a tidy list.
 
+## b is the reciprocal of task noise
+
+**Decided.** \(b = 1/(s \ln 2)\), where \(s\) is the spread of unmodelled
+variation measured in doublings. It is a property of the situation, measured,
+not assigned by activity class.
+
+The derivation is short: if an action succeeds when \(\Delta + \varepsilon > 0\)
+with logistic noise of scale \(s\), the success probability is our curve
+exactly. The parameter that looked arbitrary was a noise measurement.
+
+**Consequences:**
+
+- The original instinct — high \(b\) for casting, low for martial work — is
+  vindicated, but by mechanism rather than by class. A spell is a program that
+  compiles and runs; a fight is a contest against an adversary generating
+  variance on purpose.
+- The counter-argument that deadlifting a known weight is deterministic is
+  *accepted*: it is high \(b\). It simply is not a contest. Low \(b\) attaches
+  to contests, not to warriors.
+- Expertise raises \(b\), because experts are measurably more consistent, not
+  merely better. Noise adds in quadrature and the performer's term scales as
+  \(2^{-\text{Composure}}\), reusing the existing scale.
+- Being wounded, exhausted or frightened lowers \(b\), which ties the combat
+  system to the resolution system without a new subsystem.
+- \(b\) now has a checkable referent, so a difficulty entry can state its noise
+  instead of asserting a number.
+
+See [Where b comes from](../rules/index.md#where-b-comes-from).
+
+## Skills combine by mean, not minimum
+
+**Decided.** A skill takes the **mean** of its parents by default, the
+**minimum** where the fiction has a hard gate, and never the sum.
+
+The three candidate rules are one family — the constant-elasticity-of-
+substitution production function at different elasticities — so the question is
+how far two capacities substitute for each other, which varies per skill.
+
+**Consequences:**
+
+- Minimum is rejected as a default because it discards real information: at
+  Strength +2 / Speed 0 a character is four times stronger than baseline, and
+  minimum calls them average.
+- The mean is the only combiner that keeps a skill on the same scale as its
+  parents, which the [anchored difficulties](../rules/ability-scores.md#anchoring) require.
+- Summing is correct physics in the one case where the output really is a
+  product — power is force × velocity — but it is still rejected, because
+  force and velocity are anti-correlated in real muscle, so summing overshoots
+  the human ceiling. Where a product is the real quantity, a score already
+  measures it directly. That is why **Power** exists.
+- Multiple checks survive, attached to *tasks* rather than skills: roll twice
+  when a task has two failure modes with different consequences.
+
+See [Skills](../rules/skills.md).
+
 ## Scores are linear in level; power is exponential
 
 **Decided.** One level is one point is one doubling of real capability.

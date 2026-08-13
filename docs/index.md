@@ -62,8 +62,14 @@ Levels are linear in score and therefore
 The magic system's notation and rank ladder are settled in structure, unsettled
 in numbers. Combat has an agreed shape and no tables yet.
 
-The biggest outstanding jobs are anchoring the remaining fifteen scores and
-deciding [how b gets assigned](design/open-questions.md#how-is-b-assigned).
+[b is settled too](rules/index.md#where-b-comes-from): it is the reciprocal of
+how noisy a situation is, measured rather than assigned. Skills combine by
+[mean rather than minimum](rules/skills.md).
+
+The biggest outstanding jobs are anchoring the remaining fifteen scores,
+[reconciling the two score lists](design/open-questions.md#which-score-list-is-canonical),
+and deciding whether
+[aspects and verbs are the same axis](design/open-questions.md#do-aspects-and-verbs-occupy-the-same-axis).
 
 See [Decisions](design/decisions.md) for what has been settled and why, and
 [Open Questions](design/open-questions.md) for what has not. Pages carrying a

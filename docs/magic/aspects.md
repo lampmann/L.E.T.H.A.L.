@@ -4,115 +4,171 @@
 
 <div class="infobox" markdown>
 
-### The Seven Aspects
+### Aspects
 
 |  |  |
 |---|---|
-| **Count** | 7 |
-| **Source** | Tria prima + classical elements |
-| **Cycle** | Each beats 2, loses to 2 |
-| **Neutral** | Self, +3, −3 |
+| **Count** | 5 or 7 — undecided |
+| **Named** | 5 |
+| **Vector** | Dimension 5, sums to 1 |
+| **Each carries** | An element, an operation, a domain |
 | **Effect** | ±1 to \(\Delta\) |
 
 </div>
 
-Every spell is composed of the seven aspects, and every entity has aspect
-defences. Aspects serve two purposes at once: they drive counter-based combat,
-and they sort the spell list into categories.
+Magic is divided into aspects. Each aspect has several **manifestations** — a
+classical element, a basic database operation, and a domain — which are not
+separate systems but the same thing seen from different angles.
 
-## The seven
+The count is a root of \(x^2 - 12x + 35 = 0\). That is to say: five or seven,
+undecided.
 
-The set is the three alchemical primes followed by the four classical elements,
-in their traditional order.
+## The five
 
-| # | Aspect | Sign | Domain |
+| # | Aspect | Element | Operation | Domain |
+|---|---|---|---|---|
+| 0 | **Hylogenesis** | Earth | Create | Matter |
+| 1 | **Anabiosis** | Water | Update | Life |
+| 2 | **Pyrolysis** | Fire | Delete | Energy |
+| 3 | **Autophoresis** | Air | Move | *undecided* |
+| 4 | **Anamnesis** | Aether | Read | Spells acting on spells |
+
+Two placeholders, ⟨Aspect ζ⟩ and ⟨Aspect η⟩, wait on the five-or-seven
+decision.
+
+!!! note "Light is unassigned"
+    Light is currently claimed by both Pyrolysis (as energy) and Anamnesis (as
+    aether). It belongs to exactly one of them.
+
+## The consequence nobody has priced in yet
+
+**Aspects and verbs are now the same axis.**
+
+This is the structural change, and it is larger than the renaming. Under the
+previous model, [the five verbs](notation.md#verbs) were operators that applied
+freely to any of seven types — five verbs × seven forms, thirty-five primitive
+operations. Under this model each aspect *carries* an operation. Create is not
+something you do to earth; Create **is** Hylogenesis.
+
+So "unmake some earth" is no longer `∄ 🜃`. It is Pyrolysis acting on
+Hylogenesis-matter — a two-aspect expression rather than a verb applied to a
+form. The operator table and the aspect table are describing the same five
+things twice.
+
+That has to be resolved before either page is stable. Three readings:
+
+1. **Aspects absorb the verbs.** The notation loses its separate verb column;
+   a spell is a point in aspect space plus arguments. Cleanest, and it explains
+   why five is the natural count — five classical elements including aether,
+   five database operations.
+2. **Verbs stay orthogonal**, and an aspect's "basic operation" is only the
+   operation it performs *most naturally* — a flavour note, not a type rule.
+   Preserves the thirty-five primitives.
+3. **Both, at different layers.** Aspects are what magic is made of; verbs are
+   what a caster writes. The compiler maps one to the other.
+
+Tracked in [Open Questions](../design/open-questions.md#do-aspects-and-verbs-occupy-the-same-axis).
+
+## Five or seven
+
+The real trade-off is not tidiness of the number. It is **whether neutral
+matchups exist at all.**
+
+With any odd count \(n\), each aspect can beat \((n-1)/2\) others and lose to
+the same number, giving a clean cycle with no ties. But the *shape* differs:
+
+**Five aspects.** Each beats two, loses to two, and is neutral against nothing
+but itself. Every matchup is decisive. This is the classic five-element wheel,
+and it makes aspect choice maximally consequential — there is no safe pick and
+no dead pairing.
+
+**Seven aspects.** Each beats two, loses to two, and is *neutral against two*.
+Roughly a third of all pairings are ties, which gives room for aspects that are
+simply unrelated to each other, and lets a caster choose an aspect that is
+merely irrelevant to the opposition rather than actively bad.
+
+| | Beats | Loses | Neutral |
 |---|---|---|---|
-| 0 | **Body** | <span class="sign">🜔</span> | Flesh, matter, durability |
-| 1 | **Soul** | <span class="sign">🜍</span> | Life, death, guardianship |
-| 2 | **Spirit** | <span class="sign">☿</span> | Mind, arcana, magic itself |
-| 3 | **Earth** | <span class="sign">🜃</span> | Stone, weight, endurance |
-| 4 | **Water** | <span class="sign">🜄</span> | Flow, ice, erosion |
-| 5 | **Air** | <span class="sign">🜁</span> | Wind, lightning, movement |
-| 6 | **Fire** | <span class="sign">🜂</span> | Heat, destruction |
+| **5 aspects** | 2 | 2 | 0 |
+| **7 aspects** | 2 | 2 | 2 |
 
-The tria prima are Salt (Body), Sulphur (Soul) and Mercury (Spirit), which is
-where the signs come from. Having three primes and four elements land in a
-seven-cycle is a coincidence the system is entitled to exploit.
+Five is the more aggressive design: it guarantees that every exchange has an
+elemental story. Seven is the more forgiving one, and it needs two more
+operations and two more elements to justify itself — which is a real cost,
+since the five it has map onto the five database operations exactly.
 
-## The cycle
+### The cycle
 
-For any aspect \(N\), counting forward around the wheel:
+For aspect \(N\) counting forward around the wheel, in either size:
 
-- **Neutral** with \(N\), \(N+3\), \(N-3\)
 - **Counters** \(N+1\) and \(N+2\)
 - **Countered by** \(N-1\) and \(N-2\)
+- **Neutral** with \(N\), and with \(N\pm3\) where those exist
 
-Every aspect therefore beats exactly two, loses to exactly two, and is neutral
-against two plus itself. No aspect is universally strong, and none opts out.
-
-### Matchup matrix
+### Matchup matrix, five aspects
 
 Row acts on column. **+1** means the row aspect has advantage.
 
-| Attacker \ Defender | 🜔 Body | 🜍 Soul | ☿ Spirit | 🜃 Earth | 🜄 Water | 🜁 Air | 🜂 Fire |
-|---|---|---|---|---|---|---|---|
-| **🜔 Body** | — | **+1** | **+1** | 0 | 0 | −1 | −1 |
-| **🜍 Soul** | −1 | — | **+1** | **+1** | 0 | 0 | −1 |
-| **☿ Spirit** | −1 | −1 | — | **+1** | **+1** | 0 | 0 |
-| **🜃 Earth** | 0 | −1 | −1 | — | **+1** | **+1** | 0 |
-| **🜄 Water** | 0 | 0 | −1 | −1 | — | **+1** | **+1** |
-| **🜁 Air** | **+1** | 0 | 0 | −1 | −1 | — | **+1** |
-| **🜂 Fire** | **+1** | **+1** | 0 | 0 | −1 | −1 | — |
-
-In prose: Body beats Soul and Spirit. Soul beats Spirit and Earth. Spirit beats
-Earth and Water. Earth beats Water and Air. Water beats Air and Fire. Air beats
-Fire and Body. Fire beats Body and Soul.
+| Attacker \ Defender | Hylogenesis | Anabiosis | Pyrolysis | Autophoresis | Anamnesis |
+|---|---|---|---|---|---|
+| **Hylogenesis** | — | **+1** | **+1** | −1 | −1 |
+| **Anabiosis** | −1 | — | **+1** | **+1** | −1 |
+| **Pyrolysis** | −1 | −1 | — | **+1** | **+1** |
+| **Autophoresis** | **+1** | −1 | −1 | — | **+1** |
+| **Anamnesis** | **+1** | **+1** | −1 | −1 | — |
 
 ## Advantage is one doubling
 
-Aspect advantage is worth **+1 to \(\Delta\)**, and disadvantage **−1**.
+Aspect advantage is worth **+1 to \(\Delta\)**, disadvantage **−1**.
 
-This is proposed rather than settled, but it is the reading that costs nothing.
-A \(\Delta\) step is already defined as a doubling, so an advantageous aspect
-does double damage and a disadvantageous one does half — the ×2 / ×0.5 matchup
-multiplier the earlier draft wanted, arriving as a consequence of the scale
-instead of a separate rule. The matchup matrix and the resolution table speak
-the same units, and no additional multiplication appears at the table.
-
-The alternative is a free-floating multiplier per matchup, which allows finer
-tuning at the cost of a second numerical system nobody can hold in their head.
+A \(\Delta\) step is already a doubling, so an advantageous aspect does double
+effect and a disadvantageous one half — the ×2 / ×0.5 multiplier the earlier
+draft wanted, arriving from the scale rather than as a separate rule. The
+matchup matrix and the resolution table speak the same units, and nothing extra
+is multiplied at the table.
 
 ## Mixed aspects
 
-A spell is a proportion of aspects, expressed as a length-7 vector — for
-example a spell that is two-thirds fire and one-third air is
-\([0,0,0,0,0,\tfrac13,\tfrac23]\).
+A spell is a proportion of aspects: a vector of dimension five, all entries in
+\([0,1]\), summing to 1. Water is approximately \([0,1,0,0,0]\).
 
-An entity's aspect defences are likewise a length-7 vector; a creature immune
-to fire and ordinary against everything else is \([1,1,1,1,1,1,0.1]\). Effect
-against a given target is the dot product of the spell's aspect share with the
-target's defence vector.
+An entity's aspect defences are likewise a vector. Effect against a target is
+the dot product of the spell's aspect share with the target's defences.
 
 <div class="stub" markdown>
-Unresolved: whether the dot product operates on multipliers (linear space) or
-on \(\Delta\) offsets (log space). The two disagree for mixed-aspect spells,
-and the log-space reading is the one consistent with the rest of the system.
-Tracked in [Open Questions](../design/open-questions.md#aspects-in-linear-or-log-space).
+Still unresolved: whether that dot product operates on multipliers (linear
+space) or on \(\Delta\) offsets (log space). The two disagree for any spell
+that is not purely one aspect, and the log-space reading is the one consistent
+with the rest of the system.
 </div>
 
-## Rejected and open alternatives
+## In-world theory
 
-**The 4+3 split.** An earlier proposal ran four elements plus three abstract
-aspects, with one of them — Energy or Magic — fully neutral. It was set aside
-on the grounds that a purely neutral aspect lets a caster opt out of the
-matchup system entirely, which is the least interesting thing a player can do.
+⟨Character III⟩ published four papers proving, in order:
 
-**Eight aspects.** Extending to eight makes the count a power of two and lets
-one aspect stay neutral while the remaining seven keep a clean cycle. Still
-live, and it trades the tidy tria-prima-plus-elements derivation for a tidier
-number.
+1. There exists a function \(A(x)\), for \(x\) a mathematical object, returning
+   the aspect vector required to create that object.
+2. \(A(x)\) is well-defined for every mathematical object in ZFC.
+3. \(\forall \epsilon > 0:\ \lim_{n \to \infty} P\left(1-\epsilon > \max A(x) > \tfrac{1}{5}+\epsilon \;\middle|\; K(x)=n\right) = 0\),
+   where \(K\) is Kolmogorov complexity.
+4. \(\forall x, y:\ A(x) = A(y) \implies K(x) = K(y)\)
 
-**Dual manifestation.** Each aspect having an elemental facet and a utility
-facet — Water as both ice and life, Fire as both flame and destruction — is
-already implicit in the domain column above. Whether that needs formalising
-depends on how many non-elemental spells end up wanting a home.
+The third is the interesting one in play. It says that as objects get more
+complex, their aspect vectors stop being *mixed*: in the limit, a thing is
+either near-perfectly balanced across all five aspects or almost purely one of
+them, and the middle ground empties out. Complicated things are either
+elemental or total.
+
+The fourth is stronger than it looks — it makes the aspect vector a complete
+invariant for complexity, so two objects sharing an aspect signature cannot
+differ in how hard they are to specify.
+
+Each paper ends with *"Ceterum censeo bears are fish."*
+
+## Superseded
+
+An earlier draft used seven aspects drawn from the three alchemical primes plus
+the four classical elements — Body 🜔, Soul 🜍, Spirit ☿, Earth 🜃, Water 🜄,
+Air 🜁, Fire 🜂. That set is replaced by the named aspects above. It is recorded
+here because the seven-cycle matchup structure carried over intact, and because
+the alchemical signs remain available as notation if the count settles at seven.

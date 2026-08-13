@@ -194,20 +194,97 @@ you should narrate rather than roll. If you want dice to stay meaningful across
 wide gaps, use a finer die (d1000 extends the range to \(\pm 11\)) or lower
 \(b\).
 
-## Open: how b gets assigned
+## Where b comes from
 
-The brainstorm sets \(b\) high for casting and low for martial activity, with
-inconsistency as the price of playing a warrior. That rule is the one piece of
-the system not derived from a modelled quantity, and it runs against the
-physics: deadlifting a known weight off a firm floor is among the most
-deterministic things a body does, while casting into unmodelled magical
-conditions is not.
+**Settled: \(b\) is not a free parameter.** It is fixed by how noisy the
+situation is, and it is measured rather than assigned.
 
-The alternative on the table is to make \(b\) **emergent** from two terms — how
-completely the rules model the situation, plus a character term rising with
-Composure, Attention and Will. Elite performers really are less variable, which
-is a measured fact and therefore belongs in a simulationist system. Swinginess
-survives as a penalty; it just stops being a class tax and becomes the mark of
-a rattled or untrained operator.
+### The derivation
 
-This is unresolved. See [Open Questions](../design/open-questions.md#how-is-b-assigned).
+Suppose an action succeeds when capability exceeds difficulty, plus whatever
+the rules do not model — wind, footing, fatigue, an opponent's choice. Write
+that unmodelled part as noise \(\varepsilon\):
+
+\[ \text{success} \iff \Delta + \varepsilon > 0 \]
+
+If \(\varepsilon\) is logistic with scale \(s\), then the probability of
+success is
+
+\[ p = \frac{1}{1 + e^{-\Delta / s}} \]
+
+which is our curve exactly, with
+
+\[ \boxed{\; b = \frac{1}{s \ln 2} \;} \]
+
+So **\(s\) is the spread of luck measured in doublings, and \(b\) is its
+reciprocal.** A task where uncontrolled factors swing the effective outcome by
+half a doubling has \(s = 0.5\) and \(b \approx 2.9\). Nothing else is needed;
+the parameter that looked arbitrary was a noise measurement all along.
+
+??? note "This is a known model"
+    The curve is the two-parameter logistic used in item response theory and in
+    signal detection. There \(\Delta\) is ability minus item difficulty and
+    \(b\) is the *discrimination* parameter, which is inversely proportional to
+    the noise standard deviation. L.E.T.H.A.L. arrived at it from the other
+    direction, but it is the same object, and the psychometric reading is why
+    \(b\) has a measurable referent instead of a taste.
+
+### The table
+
+| Situation | \(s\) | \(b\) | Crit rate | Adjacent level |
+|---|---|---|---|---|
+| Uncontested feat, known static conditions | 0.10 | 14 | ~0% | ~100% |
+| Practised craft in controlled conditions | 0.25 | 6 | 0.2% | 98% |
+| Executing a verified spell | 0.40 | 3.5 | 2% | 92% |
+| Contested action against a thinking opponent | 0.75 | 2 | 11% | 79% |
+| Acting in chaos, or on unmodelled conditions | 1.5 | 1 | 26% | 66% |
+| Near-pure gamble | 6 | 0.25 | 43% | 54% |
+
+Sanity check: day-to-day variation in a trained lifter's maximum is about 3–5%,
+which is \(s \approx 0.05\) and \(b \approx 20\). Lifting a known weight really
+is nearly deterministic, and the table says so.
+
+### Why casting is high b and fighting is low b
+
+The brainstorm's instinct — high \(b\) for casting, low for martial work — is
+**correct**, but not because of class. It follows from what those activities
+are in this setting.
+
+A spell is [a program in a formal notation](../magic/notation.md). A correctly
+written spell either compiles and runs or faults; the execution itself
+contributes almost no variance. What variance magic has comes from targeting
+and from unmodelled environmental interaction, not from the casting.
+
+Fighting a person is the opposite. Your opponent is an adversary actively
+working to make your model of the situation wrong. That is close to a
+definition of high noise, and no amount of training removes it, because the
+variance is being generated on purpose by someone else.
+
+So the two rules agree, and the earlier objection — that deadlifting a known
+weight is deterministic and therefore deserves high \(b\) — is answered rather
+than overridden. Deadlifting a known weight *is* high \(b\). It simply is not a
+contest. **The low \(b\) belongs to contests, not to warriors.** An uncontested
+feat of strength is as reliable as a spell; a duel is not.
+
+### The character term
+
+Experts are not merely better on average, they are more *consistent*, and that
+is a measured fact rather than a genre convention. Noise has two sources that
+add in quadrature — one from the task, one from the performer:
+
+\[ s^2 = s_{\text{task}}^2 + s_{\text{performer}}^2 \]
+
+Since [Composure](ability-scores.md) already measures steadiness under acute
+stress in doublings, the performer term falls out of the existing scale:
+\(s_{\text{performer}} = s_0 \cdot 2^{-\text{Composure}}\). Each point of
+Composure halves your own contribution to the spread.
+
+At the table this does not need algebra. Move one row on the table:
+
+- **Down** (lower \(b\), swingier) when the character is wounded, exhausted,
+  frightened, blind, or attempting something untrained.
+- **Up** (higher \(b\), steadier) for genuine expertise in that specific skill.
+
+Swinginess survives as a penalty, exactly as intended. It just stops being a
+class tax and becomes what it actually is: the mark of a rattled, distracted or
+untrained operator, or of a situation nobody could have modelled.

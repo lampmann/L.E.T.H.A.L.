@@ -101,6 +101,7 @@ nav:
   - Rules:
       - Core Resolution: rules/index.md
       - Ability Scores: rules/ability-scores.md
+      - Skills: rules/skills.md
       - Combat: rules/combat.md
       - Character Creation: rules/character-creation.md
   - Magic:
