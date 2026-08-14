@@ -99,6 +99,7 @@ extra:
 nav:
   - Home: index.md
   - Rules:
+      - Rule Language: rules/ace.md
       - Core Resolution: rules/index.md
       - Ability Scores: rules/ability-scores.md
       - Skills: rules/skills.md

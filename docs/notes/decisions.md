@@ -11,6 +11,47 @@ Unsettled items are in [Open Questions](open-questions.md).
 Each entry stays here. If a choice reverses, the entry gets an amendment. It is
 not deleted. What we tried and rejected is worth more than a tidy list.
 
+## Rules are written in Attempto Controlled English
+
+**Decided.** Every rule appears twice: once in ACE 6.7, once in ordinary
+English. The ACE version is the rule. The English version explains it.
+
+ACE is a subset of English with exactly one meaning per sentence. Ordinary
+rules text is ambiguous, and a reader cannot always tell what a conjunction
+joins or what a phrase modifies. ACE removes that class of fault, because the
+grammar decides.
+
+**Consequences:**
+
+- Rules pages carry an ACE block. The prose after it is commentary.
+- Tables and examples stay in ordinary English. A table is data, not a rule.
+- Design notes stay in ordinary English. An argument needs it.
+- Writing a rule now takes longer, and a writer must know the ACE grammar.
+- Every ACE block must be tested in the APE parser. The machine that builds
+  this wiki cannot reach the parser, so **no block is verified yet**.
+- ACE cannot state a rule that we cannot state precisely. This is a feature.
+  If a rule resists ACE, the rule is vague, and the vagueness was already
+  there.
+
+See [Rule Language](../rules/ace.md).
+
+## The nineteen scores are correct
+
+**Decided.** The wiki's nineteen ability scores are the score list. The eight
+scores in the old skills spreadsheet are outdated.
+
+**Consequences:**
+
+- The old skill list is dead. It made a skill from each pair of eight scores,
+  which gives 171 combinations at nineteen scores.
+- The new skill list starts from activities and then finds the scores that each
+  activity needs.
+- The **Composure** skill is removed. Composure is a score. No skill may take
+  the name of a score.
+- Five scores may end up with no skill above them: Tempo, Plasticity,
+  Toughness, Recovery, Homeostasis. That is acceptable. Those scores act
+  directly.
+
 ## Scores are linear in the quantity
 
 **Decided.** A score is a measured quantity, divided by the quantity for a

@@ -1,8 +1,38 @@
 # Core Resolution
 
-<p class="hatnote">For the scores that go into a check, see <a href="ability-scores/">Ability Scores</a>.</p>
+<p class="hatnote">For the scores that go into a check, see <a href="ability-scores/">Ability Scores</a>. For the rule language, see <a href="ace/">Rule Language</a>.</p>
 
 This page gives the rule for all contested actions.
+
+## The rule
+
+```
+Every check has exactly 1 score.
+Every check has exactly 1 difficulty.
+Every check has exactly 1 skill-factor.
+Every check has exactly 1 roll.
+Every check has exactly 1 result.
+
+If a check X has a score S and X has a difficulty D then X has a ratio R and R = S / D.
+
+If a check X has a ratio R and X has a skill-factor B then X has a success-probability P and P = R^B / (R^B + 1).
+
+If a check X has a ratio R and X has a skill-factor B then X has a critical-success-probability C and C = (R / 3)^B / ((R / 3)^B + 1).
+
+If a check X has a ratio R and X has a skill-factor B then X has a critical-failure-probability F and F = (3 * R)^B / ((3 * R)^B + 1).
+
+If a check X has a roll N and X has a critical-success-probability C and N =< C then X has a result that is a critical-success.
+
+If a check X has a roll N and X has a critical-success-probability C and X has a success-probability P and N > C and N =< P then X has a result that is a normal-success.
+
+If a check X has a roll N and X has a success-probability P and X has a critical-failure-probability F and N > P and N =< F then X has a result that is a normal-failure.
+
+If a check X has a roll N and X has a critical-failure-probability F and N > F then X has a result that is a critical-failure.
+
+If a situation has a noise-spread S then the situation has a skill-factor B and B = 1 / (S * 0.6931).
+```
+
+The rest of this page explains those sentences.
 
 ## The formula
 
@@ -20,6 +50,12 @@ A median adult human has a score of 1.0 in each ability.
 Only the **ratio** \(R = S / D\) is important. If the character is three times
 better than the task needs, \(R = 3\), and the result is the same at
 \(S = 3, D = 1\) as at \(S = 300, D = 100\).
+
+The formula can thus be written with the ratio alone:
+
+\[ p = \frac{R^{b}}{R^{b} + 1} \]
+
+This is the form that the ACE block uses.
 
 An opposed check needs no other rule. Make \(D\) the opponent's score.
 

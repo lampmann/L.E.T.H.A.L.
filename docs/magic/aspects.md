@@ -11,8 +11,7 @@
 | **Count** | 5 or 7. Not decided. |
 | **Named** | 5 |
 | **Vector** | 5 values. Total is 1. |
-| **Advantage** | Multiply the score by 2 |
-| **Disadvantage** | Divide the score by 2 |
+| **Matchups** | Not decided |
 
 </div>
 
@@ -41,18 +40,45 @@ Light has no aspect yet. Pyrolysis and Anamnesis both claim it. Give it to one
 of the two.
 </div>
 
-## The cycle
+## Matchups
+
+<div class="stub" markdown>
+**Two questions are open, and the second depends on the first.**
+
+1. Do matchups exist at all? An aspect can have an advantage against another
+   aspect, or all aspects can be equal.
+2. Are there five aspects or seven?
+
+The text below is a proposal. It is not a rule. Do not use it in play yet.
+</div>
+
+### If matchups exist
 
 For any aspect \(N\), count forward around the wheel:
 
-- \(N\) **has advantage against** \(N+1\) and \(N+2\).
-- \(N\) **has disadvantage against** \(N-1\) and \(N-2\).
+- \(N\) **has an advantage against** \(N+1\) and \(N+2\).
+- \(N\) **has a disadvantage against** \(N-1\) and \(N-2\).
 - All other pairs are equal.
 
-With five aspects, each aspect has advantage against two and disadvantage
-against two. No pair is equal. Every combination of aspects has a result.
+An advantage multiplies the score by 2. A disadvantage divides the score by 2.
+Use the new score in the [resolution formula](../rules/index.md).
 
-### Matchup table
+### The effect of the count
+
+The number of aspects decides how many pairs are equal.
+
+| Count | Advantage against | Disadvantage against | Equal to |
+|---|---|---|---|
+| 5 | 2 | 2 | 0 |
+| 7 | 2 | 2 | 2 |
+
+With five aspects, **no pair is equal**. Each combination of two aspects has a
+result. A caster cannot select an aspect that is merely irrelevant.
+
+With seven aspects, one third of the pairs are equal. A caster can select an
+aspect that is neither good nor bad against the opposition.
+
+### Proposed table for five aspects
 
 The row acts on the column.
 
@@ -64,12 +90,14 @@ The row acts on the column.
 | **Autophoresis** | ×2 | ÷2 | ÷2 | — | ×2 |
 | **Anamnesis** | ×2 | ×2 | ÷2 | ÷2 | — |
 
-## How to use advantage
+### If matchups do not exist
 
-Advantage multiplies your score by 2. Disadvantage divides your score by 2.
+Aspects then sort spells into groups, and nothing more. Each aspect has the
+same effect against each target.
 
-Use the new score in the [resolution formula](../rules/index.md). No other
-calculation is necessary.
+This is a smaller system, and it removes one decision from each cast. It also
+removes the reason for a defence vector, because a defence vector with equal
+values does nothing.
 
 ## Mixed aspects
 
@@ -81,6 +109,10 @@ Water is approximately \([0, 1, 0, 0, 0]\).
 Each entity also has a list of five defence values. To find the effect against
 a target, multiply each spell value by the matching defence value, then add the
 five results.
+
+A defence vector is only useful if the values differ. If
+[matchups do not exist](#if-matchups-do-not-exist), this section has no
+purpose.
 
 <div class="stub" markdown>
 Not decided: whether the defence values are multipliers or exponents. The two

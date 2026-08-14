@@ -26,6 +26,11 @@ programming language.
 
 ## Rules
 
+Each rules page states its rule in
+[Attempto Controlled English](rules/ace.md), then explains it in ordinary
+English. If the two disagree, the ACE version is correct.
+
+- [Rule Language](rules/ace.md) — how to read and write the rule blocks.
 - [Core Resolution](rules/index.md) — the formula for all checks.
 - [Ability Scores](rules/ability-scores.md) — nineteen scores and the chassis.
 - [Skills](rules/skills.md) — how to make a skill from two scores.
@@ -72,8 +77,9 @@ numbers. Combat has a structure but no tables.
 The largest tasks that remain:
 
 - Give anchors to the other fifteen scores.
-- [Choose one score list](notes/open-questions.md#which-score-list-is-correct).
+- [Write the skill list](notes/open-questions.md#what-is-the-skill-list).
 - [Decide if aspects and verbs are the same axis](notes/open-questions.md#do-aspects-and-verbs-occupy-the-same-axis).
+- [Decide if aspect matchups exist](notes/open-questions.md#do-aspect-matchups-exist-at-all).
 
 A page with a box like this is not complete:
 

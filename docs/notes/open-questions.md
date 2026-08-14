@@ -39,17 +39,22 @@ aspect. Single-aspect spells are the same either way.
 
 ## Character
 
-### Which score list is correct?
+### What is the skill list?
 
-**Load-bearing.** The [skill list](../rules/skills.md#the-skill-list) pairs
-eight scores; [Ability Scores](../rules/ability-scores.md) defines nineteen.
-Pairing nineteen is not viable at 171 combinations, so the fix is to keep the
-fifteen skill names and re-parent them onto the nineteen — but that has to be
-done deliberately, because several of the nineteen absorb a pair outright.
+Settled that [the nineteen scores are correct](decisions.md#the-nineteen-scores-are-correct)
+and that the skill list restarts from nothing.
 
-Note also the name collision: **Composure** is currently both a skill and an
-ability score, and the [b rule](../rules/index.md#the-character-part) refers to
-the score. One of the two needs renaming.
+Open: which activities become skills, and how many there are. Twenty entries is
+a lot to hold in the head. Twelve is easier and loses detail. A proposal is in
+the [Scratchpad](scratchpad.md#skill-list-proposal).
+
+Three smaller questions come with it:
+
+- May a skill derive from only one score? If yes, a skill is only a trained
+  multiplier over that score.
+- Persuasion and Deceit want the same two scores. Merge them, separate them
+  with a third score, or accept that only the fiction separates them.
+- Which skills use the minimum rule instead of the mean rule?
 
 ### What is the skill list?
 
@@ -119,15 +124,25 @@ Three readings:
 
 Until this resolves, neither magic page is stable.
 
+### Do aspect matchups exist at all?
+
+**Asked first.** An aspect can have an advantage against another aspect, or all
+aspects can be equal.
+
+If matchups exist, aspects drive combat and a caster chooses an aspect against
+the opposition. If they do not, aspects only sort spells into groups, and the
+defence vector has no purpose.
+
 ### Five aspects or seven?
 
-Five maps exactly onto the five classical elements and the five database
-operations, and gives a wheel with **no neutral matchups at all** — every
-exchange is decisive. Seven needs two more elements and two more operations to
-justify itself, and buys a third of all pairings being ties, which lets a
-caster pick an aspect that is merely irrelevant rather than actively bad.
+This question depends on the one above. It only matters if matchups exist.
 
-Aggression versus room to breathe, rather than a question about tidy numbers.
+Five maps onto the five classical elements and the five database operations,
+and gives a wheel with **no equal pairs at all**. Every exchange has a result.
+
+Seven needs two more elements and two more operations, and makes one third of
+the pairs equal. A caster can then pick an aspect that is merely irrelevant
+rather than bad.
 
 ### Do daemons carry extra variance?
 

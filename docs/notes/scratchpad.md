@@ -22,12 +22,8 @@ What was lost: the resolution formula was `p = 1/(1+2^(-b·Δ))` with
 power. At `b = 1` this is fine, `p = S/(S+D)`. At other values of `b` somebody
 has to raise a number to a power at the table.
 
-Possible answers, none tested:
-
-- Only allow integer `b`. Then `b = 2` is a square, `b = 3` is a cube.
-- Print a table of `p` against `R` for each `b` we actually use.
-- Give each character a card with their common ratios pre-computed.
-- Accept that the referee has a calculator.
+**Resolved.** A few cells in a spreadsheet do it, and a character sheet with a
+built-in calculator does it later. Not a problem. Do not spend more time on it.
 
 The crit rule survived the change without any edit, which is a good sign. It is
 still "a factor of three either way", and it still gives `1/(1+3^b)`.
@@ -76,19 +72,72 @@ Not changed yet. Waiting for a decision.
 
 ## Skill list versus score list
 
-The skills sheet uses eight scores. The wiki uses nineteen. Pairing nineteen
-gives 171 skills, which is absurd.
+**Resolved.** Nineteen scores. The skills sheet is outdated. Build the skill
+list again from nothing. Drop the Composure skill, because Composure is a
+score.
 
-The pairing rule was only ever a way to generate candidates. Keep the fifteen
-names, re-attach them to the nineteen scores. Several of the nineteen already
-absorb a pair:
+## Skill list proposal
 
-- Explosive Strength is Power. Power already is force times speed.
-- Reflex is Latency and Acuity.
-- Fortitude is Homeostasis and Will.
-- Composure is just the Composure score.
+Not decided. A starting point only.
 
-That last one is a name collision and needs fixing.
+The old list made a skill from each pair of scores. That is backwards. It
+generates combinations and then looks for a name. Start from the activity
+instead, then ask which scores it needs.
+
+The brainstorm already had the right instinct: "fighting in melee" and
+"fighting at range" should sit at the same level as "investigation" and "recall
+knowledge". So combat is not privileged, and the list should read like a list
+of things people do.
+
+A first cut, by what a character spends time doing:
+
+**Fighting**
+
+- Melee — Precision, Agility
+- Missiles — Precision, Acuity
+- Grappling — Force, Articulation
+- Defence — Agility, Latency
+
+**Moving**
+
+- Athletics — Power, Stamina
+- Climbing — Force, Stamina
+- Stealth — Agility, Attention
+
+**Making**
+
+- Craft — Precision, Memory
+- Medicine — Precision, Memory
+- Cooking — Acuity, Memory
+
+**Knowing**
+
+- Investigation — Attention, Memory
+- Lore — Memory
+- Magecraft — Memory, Will
+
+**Dealing with people**
+
+- Persuasion — Projection, Affect Reading
+- Deceit — Projection, Affect Reading
+- Command — Projection, Will
+
+**Sensing**
+
+- Sight, Hearing, Smell, Taste, Touch — Acuity, plus the chassis factor
+
+Problems with this cut:
+
+- Persuasion and Deceit use the same two scores. Either merge them, or find a
+  score that separates them, or accept that the difference is fiction and not
+  numbers.
+- Lore takes only one score. Is a one-score skill allowed? The rule says "at
+  least 1", so yes, but then a skill is only a trained multiplier.
+- Nothing here uses Tempo, Plasticity, Toughness, Recovery or Homeostasis.
+  Those five may be scores that no skill needs, which is fine — they act
+  directly, without a skill in front.
+- The list has 22 entries and it is not complete. Decide the target size first.
+  Twenty is a lot to hold. Twelve is easier and loses detail.
 
 ## Small things, unsorted
 

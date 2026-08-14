@@ -1,6 +1,6 @@
 # Ability Scores
 
-<p class="hatnote">For the rule that uses these scores, see <a href="../">Core Resolution</a>.</p>
+<p class="hatnote">For the rule that uses these scores, see <a href="../">Core Resolution</a>. For the rule language, see <a href="../ace/">Rule Language</a>.</p>
 
 <div class="infobox" markdown>
 
@@ -16,6 +16,29 @@
 | **Count** | 19 |
 
 </div>
+
+## The rule
+
+```
+Every ability-score is a number that is greater than 0.
+No ability-score has a maximum.
+Every ability-score measures exactly 1 quantity.
+
+If a creature has an ability-score X and X measures a quantity Q and a median-adult has a quantity M then X = Q / M.
+
+If an ability-score measures a quantity that is better when the quantity is small then the ability-score measures a reciprocal of the quantity.
+
+If a creature has a level L and has an ability-score X and X has a base-value Z then X = Z * 2^L.
+
+Every chassis has a mass and has a length and has a density and has an energy-use and has a limb-count and has a lifespan.
+No chassis-value is an ability-score.
+
+If a creature makes a check for a sense and the creature has an acuity A and the creature has a chassis-factor G for the sense and the creature has a skill K for the sense then the check has a score S and S = A * G * K.
+```
+
+The rest of this page explains those sentences.
+
+## The scale
 
 A score is a measured quantity, divided by the quantity for a median adult
 human.
