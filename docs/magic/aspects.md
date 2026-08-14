@@ -11,7 +11,7 @@
 | **Count** | 5 or 7. Not decided. |
 | **Named** | 5 |
 | **Vector** | 5 values. Total is 1. |
-| **Verbs** | Aspects. Not a separate axis. |
+| **Verbs** | Separate symbols. Correlated. |
 | **Pure vectors** | 5. One complexity each. |
 | **Matchups** | Not decided |
 
@@ -42,14 +42,31 @@ Light has no aspect yet. Pyrolysis and Anamnesis both claim it. Give it to one
 of the two.
 </div>
 
-## Aspects are the only axis
+## Verbs and aspects are correlated
 
-An operation is not separate from an aspect. An operation **is** an aspect.
-Hylogenesis is Create. Pyrolysis is Delete. A caster selects aspects, and
-nothing else.
+A verb and an aspect use **different symbols**. A caster writes both. The verb
+column in [Spell Notation](notation.md) stays.
 
-Thus a spell that makes fire is not pure Pyrolysis. It creates, and creation is
-Hylogenesis. The spell has both aspects.
+The two are not independent. Each verb has an aspect. Create has Hylogenesis.
+Delete has Pyrolysis. When a caster writes a verb, that verb puts its aspect
+into the spell.
+
+So the aspect list of a spell comes from the whole expression. The verbs add to
+it. The targets add to it. A caster does not write the list. The list follows
+from what the caster writes.
+
+### Example
+
+A firebolt creates fire. A caster writes the Create verb and the Fire aspect.
+
+- The Fire target gives Pyrolysis.
+- The Create verb gives a small part of Hylogenesis.
+
+The result is a mix, and the mix is very unequal:
+
+\[ [0.01,\; 0,\; 0.99,\; 0,\; 0] \]
+
+A firebolt is thus not pure Pyrolysis. It is almost pure Pyrolysis.
 
 ### Why no spell is exactly pure
 
@@ -66,13 +83,7 @@ range. There is one value.
 
 Now apply the reverse. A firebolt has some complexity. That complexity is
 almost certainly not exactly the pure value. Therefore a firebolt is not pure
-Pyrolysis.
-
-A firebolt is thus a mix. The mix is not equal. It is approximately:
-
-\[ [0.01,\; 0,\; 0.99,\; 0,\; 0] \]
-
-Almost all fire, and a small part earth for the act of creation.
+Pyrolysis, and the verb explains why: the Create verb adds Hylogenesis.
 
 This agrees with the third theorem. That theorem says a complex object has a
 largest aspect value near 1, or has five equal values. A largest value of 0.99
@@ -80,21 +91,26 @@ is in the first group.
 
 ### Results of this rule
 
+**The notation is unchanged.** Verbs, handles, metaprogramming operators,
+modifiers and predicates all stay. The five verbs and the five aspects remain
+two symbol sets, and 35 verb-aspect pairs remain available.
+
 **The list of pure spells is short.** There are exactly five pure aspect lists,
 one for each aspect. Each one has exactly one complexity. A pure spell is
-therefore a unique thing, and not a class of things.
+therefore a unique thing, and not a class of things. A pure spell also cannot
+use a verb of a different aspect.
 
 **The aspect list gives the complexity of a spell.** Two spells with the same
 aspect list have the same complexity. A designer who wants two spells of
 different complexity must give them different aspect lists.
 
-**The notation loses its verb column.** The five verbs in
-[Spell Notation](notation.md) are aspects. The modifiers, the handles and the
-metaprogramming operators are not aspects, and they remain.
-
 <div class="stub" markdown>
-The exact values in a mix are not decided. A firebolt is approximately 99
-percent Pyrolysis, but no rule gives that number. Find the rule that gives it.
+The rule that gives the numbers is not written. A firebolt is approximately 99
+percent Pyrolysis, but nothing produces that value yet.
+
+It is also not decided whether the correlation does anything **other** than set
+the percentages. It can be only a weight on the aspect list. It can also make
+some verb and aspect pairs cheaper or harder than others.
 </div>
 
 ## Matchups

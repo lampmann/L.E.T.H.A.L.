@@ -45,9 +45,19 @@ list fixes the complexity. So all pure-Pyrolysis things share one complexity
 value. A firebolt will not land on that exact value, so a firebolt is not pure.
 It is about 99/1 Pyrolysis to Hylogenesis.
 
-Aspects absorbed the verbs. Less damage than feared: only the verb column dies.
-Modifiers, handles, metaprogramming and the rank ladder are all untouched,
-because rank counts modifiers and never counted verbs.
+**Correction.** I first wrote that aspects absorbed the verbs and the verb
+column dies. Wrong. Verbs and aspects use different symbols and both get
+written. They are correlated: the verb puts its own aspect into the spell's
+list.
+
+So the notation loses nothing at all. 35 verb-aspect pairs stand. What changes
+is that the aspect list is derived from the expression rather than written by
+the caster.
+
+Open, and possibly the more interesting question: does the correlation do
+anything except set the percentages? If a mismatched pair also costs more, then
+Create Stone is cheaper than Create Fire, and casters get a reason to care.
+That needs a table of 35 entries. If it is weight only, no table is needed.
 
 Two things fall out that nobody asked for:
 

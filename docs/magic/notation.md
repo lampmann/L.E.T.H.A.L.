@@ -5,15 +5,14 @@
 Magic is programming. A spell is an expression written in a formal notation,
 and casting it is executing that expression. This page defines the operators.
 
-!!! warning "The verb section is out of date"
-    [Aspects are the only axis](aspects.md#aspects-are-the-only-axis). The five
-    verbs below are aspects, and they are not separate operators. This page
-    still shows them as a separate column.
+!!! note "Verbs carry an aspect"
+    A verb and an aspect use different symbols, and this page is correct. But
+    the two are [correlated](aspects.md#verbs-and-aspects-are-correlated). Each
+    verb puts its own aspect into the spell. Create adds Hylogenesis. Delete
+    adds Pyrolysis.
 
-    The rest of the page is not affected. Handles, metaprogramming operators,
-    modifiers and predicates are control structures. They are not aspects. The
-    rank ladder is also unaffected, because rank has always counted modifiers
-    and never counted verbs.
+    So the aspect list of a spell follows from the whole expression. A caster
+    does not write the list.
 
     Examples still use the old alchemical signs, because the named aspects have
     no signs yet.

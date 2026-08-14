@@ -106,19 +106,32 @@ diagonal distance works for reach weapons.
 
 ### What sets the values in a mixed aspect list?
 
-Settled that [aspects and verbs are one axis](decisions.md#aspects-and-verbs-are-one-axis),
-and that a firebolt is therefore approximately 99 percent Pyrolysis and 1
-percent Hylogenesis.
+Settled that [verbs and aspects are correlated](decisions.md#verbs-and-aspects-are-correlated-not-identical),
+and that the verb puts its own aspect into the spell. A firebolt is therefore
+about 99 percent Pyrolysis and 1 percent Hylogenesis.
 
-Open: what rule gives those numbers. At present 99 and 1 are an estimate. A
-rule must give the split for any spell, and the rule must agree with the fourth
-theorem, because the list fixes the complexity.
+Open: what rule gives those numbers. At present 99 and 1 are an estimate.
 
-### How does the notation show an aspect mix?
+One candidate, untested: **weight each part by the bits that it contributes.**
+The fourth theorem ties the list to complexity, and a verb is one symbol while
+its target needs a full specification. A verb would then take a small share by
+construction, and the share would fall as the target becomes more complex. This
+also predicts that a spell with a simple target has a larger verb share.
 
-The verb column is retired. A spell is now a point in aspect space plus
-arguments plus control structures. Nobody has written the notation for a point
-in aspect space.
+### Does the correlation do anything except set percentages?
+
+The correlation certainly changes the aspect list. It is not decided whether it
+does anything more.
+
+- **Weight only.** Any verb works with any aspect. The pair only decides the
+  list. This is the smaller rule.
+- **Weight and cost.** A verb that disagrees with its target costs more mana,
+  or takes more strokes, or needs a higher rank. Create Fire would then be
+  harder than Create Stone, because Create is Hylogenesis and stone is
+  Hylogenesis.
+
+The second option gives casters a reason to prefer some pairs. It also adds a
+table that somebody must fill in for all 35 pairs.
 
 ### Do aspect matchups exist at all?
 
