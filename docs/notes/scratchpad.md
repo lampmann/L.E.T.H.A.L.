@@ -40,7 +40,23 @@ why five is natural: five elements, five operations.
 If verbs stay separate, then "Hylogenesis governs Create" is only flavour, and
 the 35 primitives survive.
 
-Nobody has picked. Both magic pages are unstable until somebody does.
+**Resolved, and by a proof rather than by taste.** Theorem 4 says the aspect
+list fixes the complexity. So all pure-Pyrolysis things share one complexity
+value. A firebolt will not land on that exact value, so a firebolt is not pure.
+It is about 99/1 Pyrolysis to Hylogenesis.
+
+Aspects absorbed the verbs. Less damage than feared: only the verb column dies.
+Modifiers, handles, metaprogramming and the rank ladder are all untouched,
+because rank counts modifiers and never counted verbs.
+
+Two things fall out that nobody asked for:
+
+- Exactly five pure aspect lists exist, each with one complexity. Those are five
+  unique spells, not five classes of spell. That is a strong lore hook. Somebody
+  should decide what the five pure spells are.
+- The aspect list gives the complexity, so it gives the rank. Two spells with
+  the same list must have the same rank. That is a real constraint on spell
+  design and it is not written down anywhere yet.
 
 ## b, before it was settled
 

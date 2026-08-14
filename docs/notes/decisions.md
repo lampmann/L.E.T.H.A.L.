@@ -11,6 +11,41 @@ Unsettled items are in [Open Questions](open-questions.md).
 Each entry stays here. If a choice reverses, the entry gets an amendment. It is
 not deleted. What we tried and rejected is worth more than a tidy list.
 
+## Aspects and verbs are one axis
+
+**Decided.** An operation is an aspect. A caster selects aspects only. The
+notation has no separate verb axis.
+
+The decision follows from the fourth theorem, \(A(x) = A(y) \implies K(x) = K(y)\),
+and not from taste:
+
+1. Two pure-Pyrolysis objects have equal aspect lists, so they have equal
+   complexity. Every pure aspect therefore has **exactly one** complexity, not
+   a range.
+2. A firebolt has no reason to land on that exact complexity. So a firebolt is
+   not pure Pyrolysis.
+3. A firebolt is therefore a mix, near 99 percent Pyrolysis and 1 percent
+   Hylogenesis for the act of creation.
+
+This also agrees with the third theorem, which puts a complex object either
+near one pure aspect or at five equal values. A largest value of 0.99 sits in
+the first group.
+
+**Consequences:**
+
+- There are exactly five pure aspect lists. Each is a single object, not a
+  class. Pure spells are unique things.
+- The aspect list gives the complexity. Two spells with the same list have the
+  same complexity, so two spells of different rank need different lists.
+- The verb column in the notation is retired. The five verbs are aspects.
+- Damage is limited. Handles, metaprogramming, modifiers and predicates are
+  control structures, not aspects, so they survive unchanged. The rank ladder
+  survives too, because rank counts modifiers and never counted verbs.
+- 35 primitives become 5 aspects plus a mixing rule. The mixing rule is not
+  written.
+
+See [Aspects are the only axis](../magic/aspects.md#aspects-are-the-only-axis).
+
 ## Rules are written in Attempto Controlled English
 
 **Decided.** Every rule appears twice: once in ACE 6.7, once in ordinary

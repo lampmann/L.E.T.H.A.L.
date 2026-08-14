@@ -104,25 +104,21 @@ diagonal distance works for reach weapons.
 
 ## Magic
 
-### Do aspects and verbs occupy the same axis?
+### What sets the values in a mixed aspect list?
 
-**Load-bearing.** Each aspect now carries a
-[basic database operation](../magic/aspects.md#the-five-aspects) — Hylogenesis *is*
-Create, Pyrolysis *is* Delete. But [Spell Notation](../magic/notation.md#verbs)
-treats the five verbs as operators applying freely to any aspect, giving
-thirty-five primitives. Both cannot be true as written.
+Settled that [aspects and verbs are one axis](decisions.md#aspects-and-verbs-are-one-axis),
+and that a firebolt is therefore approximately 99 percent Pyrolysis and 1
+percent Hylogenesis.
 
-Three readings:
+Open: what rule gives those numbers. At present 99 and 1 are an estimate. A
+rule must give the split for any spell, and the rule must agree with the fourth
+theorem, because the list fixes the complexity.
 
-1. **Aspects absorb the verbs.** The notation loses its verb column. A spell
-   becomes a point in aspect space plus arguments. This is the cleanest, and it
-   explains why five is natural: five elements, five operations.
-2. **Verbs stay separate.** An aspect's operation is only the one it performs
-   most naturally — flavour, not a type rule. The 35 primitives survive.
-3. **Both, at different layers.** Aspects are what magic is made of. Verbs are
-   what a caster writes. The compiler maps between them.
+### How does the notation show an aspect mix?
 
-Until this resolves, neither magic page is stable.
+The verb column is retired. A spell is now a point in aspect space plus
+arguments plus control structures. Nobody has written the notation for a point
+in aspect space.
 
 ### Do aspect matchups exist at all?
 

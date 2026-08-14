@@ -5,16 +5,18 @@
 Magic is programming. A spell is an expression written in a formal notation,
 and casting it is executing that expression. This page defines the operators.
 
-!!! warning "This page is ahead of the aspect revision"
-    The model below treats aspects as *types* and verbs as *operators* applying
-    freely to them. The [aspect system](aspects.md) now gives each aspect its
-    own basic operation, which may mean the two are the same axis rather than
-    two. Until
-    [that resolves](../notes/open-questions.md#do-aspects-and-verbs-occupy-the-same-axis),
-    the operator grammar here stands but its relationship to aspects does not.
+!!! warning "The verb section is out of date"
+    [Aspects are the only axis](aspects.md#aspects-are-the-only-axis). The five
+    verbs below are aspects, and they are not separate operators. This page
+    still shows them as a separate column.
 
-    Examples still use the superseded alchemical signs (🜂 fire, 🜍 soul,
-    ☿ spirit) because the named aspects have no notation yet.
+    The rest of the page is not affected. Handles, metaprogramming operators,
+    modifiers and predicates are control structures. They are not aspects. The
+    rank ladder is also unaffected, because rank has always counted modifiers
+    and never counted verbs.
+
+    Examples still use the old alchemical signs, because the named aspects have
+    no signs yet.
 
 ## The model
 

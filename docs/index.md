@@ -78,7 +78,7 @@ The largest tasks that remain:
 
 - Give anchors to the other fifteen scores.
 - [Write the skill list](notes/open-questions.md#what-is-the-skill-list).
-- [Decide if aspects and verbs are the same axis](notes/open-questions.md#do-aspects-and-verbs-occupy-the-same-axis).
+- [Find the rule that sets a mixed aspect list](notes/open-questions.md#what-sets-the-values-in-a-mixed-aspect-list).
 - [Decide if aspect matchups exist](notes/open-questions.md#do-aspect-matchups-exist-at-all).
 
 A page with a box like this is not complete:

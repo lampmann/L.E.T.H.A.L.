@@ -11,6 +11,8 @@
 | **Count** | 5 or 7. Not decided. |
 | **Named** | 5 |
 | **Vector** | 5 values. Total is 1. |
+| **Verbs** | Aspects. Not a separate axis. |
+| **Pure vectors** | 5. One complexity each. |
 | **Matchups** | Not decided |
 
 </div>
@@ -38,6 +40,61 @@ count becomes seven.
 <div class="stub" markdown>
 Light has no aspect yet. Pyrolysis and Anamnesis both claim it. Give it to one
 of the two.
+</div>
+
+## Aspects are the only axis
+
+An operation is not separate from an aspect. An operation **is** an aspect.
+Hylogenesis is Create. Pyrolysis is Delete. A caster selects aspects, and
+nothing else.
+
+Thus a spell that makes fire is not pure Pyrolysis. It creates, and creation is
+Hylogenesis. The spell has both aspects.
+
+### Why no spell is exactly pure
+
+The fourth theorem states that the aspect list gives the complexity:
+
+\[ A(x) = A(y) \implies K(x) = K(y) \]
+
+Take two objects that are both pure Pyrolysis. Their aspect lists are equal.
+Therefore their complexities are equal.
+
+**Every pure aspect has exactly one complexity.** If a pure Pyrolysis object of
+231 bits exists, then each pure Pyrolysis object has 231 bits. There is no
+range. There is one value.
+
+Now apply the reverse. A firebolt has some complexity. That complexity is
+almost certainly not exactly the pure value. Therefore a firebolt is not pure
+Pyrolysis.
+
+A firebolt is thus a mix. The mix is not equal. It is approximately:
+
+\[ [0.01,\; 0,\; 0.99,\; 0,\; 0] \]
+
+Almost all fire, and a small part earth for the act of creation.
+
+This agrees with the third theorem. That theorem says a complex object has a
+largest aspect value near 1, or has five equal values. A largest value of 0.99
+is in the first group.
+
+### Results of this rule
+
+**The list of pure spells is short.** There are exactly five pure aspect lists,
+one for each aspect. Each one has exactly one complexity. A pure spell is
+therefore a unique thing, and not a class of things.
+
+**The aspect list gives the complexity of a spell.** Two spells with the same
+aspect list have the same complexity. A designer who wants two spells of
+different complexity must give them different aspect lists.
+
+**The notation loses its verb column.** The five verbs in
+[Spell Notation](notation.md) are aspects. The modifiers, the handles and the
+metaprogramming operators are not aspects, and they remain.
+
+<div class="stub" markdown>
+The exact values in a mix are not decided. A firebolt is approximately 99
+percent Pyrolysis, but no rule gives that number. Find the rule that gives it.
 </div>
 
 ## Matchups
